@@ -1,0 +1,78 @@
+#hero{
+	background: url('./images/horizon-ocean.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	padding-bottom: 30%;
+}
+
+nav{
+	background-color: rgb(0,0,0,0.5);
+	padding: 30px;
+}
+
+a{
+	text-decoration: none;
+}
+
+nav a{
+	color: white;
+	padding: 20px;
+	transition: 1s;
+	border: solid;
+	border-color: white;
+	border-radius: 15px;
+	font-family: verdana;
+}
+
+nav a:hover{
+	background-color: white;
+	color: blue;
+	
+}
+
+#espace_pro{
+
+}
+
+#compte{
+	margin-left: 60%;
+}
+
+h1{
+	color: white;
+	font-family: Verdana;
+    font-size: 60px;
+    text-align: center
+}
+
+#airblio{
+	text-align: center;
+	padding: 20px;
+	margin: 50px;
+}
+
+#menu{
+	background-color: rgb(70,90,100,0.5);
+	padding: 30px;
+	text-align: center;
+	font-family: times new roman;
+	display: flex;
+}
+
+.menu_item{
+	flex: 1;
+	color: white;
+	font-size: 28px;
+	text-align: center;
+	transition: 1s;
+}
+
+.menu_item:hover{
+	color: blue;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
