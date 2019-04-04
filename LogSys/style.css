@@ -1,4 +1,4 @@
-/* Eléments principaux de la page */
+/* Elï¿½ments principaux de la page */
 
 @font-face {
     font-family: 'quantifyregular';
@@ -17,7 +17,10 @@
 
 body
 {
-    background: url("images/fond_bleu.png");
+    background: url('images/horizon-ocean.jpg') no-repeat;
+    background-size: cover;
+    height: 100%;
+    padding-bottom: 40%;
 } 
 
 
@@ -31,6 +34,10 @@ section h1, footer h1, nav a
     font-family: quantifyregular;
     font-weight: normal;
     text-transform: uppercase;
+}
+
+main{
+
 }
 
 /* Header --------------------------------------------------------------------------------------------------- */
