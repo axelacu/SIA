@@ -1,4 +1,4 @@
-/* El�ments principaux de la page */
+/* Elements principaux de la page */
 
 @font-face {
     font-family: 'quantifyregular';
@@ -21,7 +21,7 @@ body
     background-size: cover;
     height: 100%;
     padding-bottom: 40%;
-} 
+}
 
 
 #bloc_page

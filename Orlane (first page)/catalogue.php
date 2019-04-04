@@ -34,18 +34,40 @@
 		</section>
 
 		<section>
-			
+			<div id="catalogue">
+				<?php
+					//TODO on inclue ici le fichier de connexion à la base
+					include('./LogSys/includes/dbh.inc.php');
 
-			
+					//TODO récupérer les images des produits du catalogue
+					$dir = 'images_catalogue';
+
+
+					/*//TODO on récupère les enregistrements de la base de données
+					$req_main = $conn->prepare("SELECT 			FROM 	 ORDER BY 		ASC");
+					$req_main->execute();*/
+
+
+					//On crée une boucle pour afficher les photos avec description
+					/*while($row = ){
+						$file_name = $row['#'];
+						$description = $row['description'];
+						$prix = $row['prix'];
+
+						//On affiche le résultat
+						echo '<table> width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td><img src="'.$dir.'/'.$file_name.'" width="150px" height="113px"></td>
+									<td>'.$description.'</td>
+								<tr>
+							  </table>';
+					}*/
+
+				?>
+			</div>
+
+
 		</section>
-
-
-
-
-
-
-		
-		
 
 
 
