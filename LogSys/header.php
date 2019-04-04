@@ -52,8 +52,8 @@ session_start();
 					<div id="navigation">
 						<nav>
 							<ul>
-								<li><a href="index.php">Acceuil</a></li>
-								<li><a href="#">Produit</a></li>
+								<li><a href="index.php">Accueil</a></li>
+								<li><a href="catalogue.php">Produit</a></li>
 								<li><a href="#">Service</a></li>
 								<li><a href="#">Assistance</a></li>
 							</ul>
