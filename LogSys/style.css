@@ -13,7 +13,6 @@
 	font-family: 'pt_sansbold';
 	src: url('polices/PTS75F-webfont.eot');
 	src: url('polices/PTS75F-webfont.eot?#iefix') format('embedded-opentype'),
-	url('polices/PTS75F-webfont.woff2') format('woff2'),
 	url('polices/PTS75F-webfont.woff') format('woff'),
 	url('polices/PTS75F-webfont.ttf') format('truetype'),
 	url('polices/PTS75F-webfont.svg#pt_sansbold') format('svg');

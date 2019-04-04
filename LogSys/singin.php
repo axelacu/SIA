@@ -13,7 +13,7 @@ require 'header.php';
             <input type="text" name="mailuid" placeholder="Username/E-mail...">
 
             <label for="pwd"><b>Password</b></label>
-            <input type="password" name="pwd" placeholder="Password...">
+            <input type="password" name="pwd" placeholder="Password..."> 
             <button type="submit" name="login-submit">Connexion</button>
         </form>
     </main>
