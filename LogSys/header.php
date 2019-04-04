@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -6,8 +9,6 @@
 		<link rel="stylesheet" href="style.css" />		
 		<title></title>
 	</head>
-
-
 	<body>
 		<div id="bloc_page">
 			<header>
@@ -32,26 +33,20 @@
 					</div>
 					
 					<nav>
-						<a href="#" class="button">Sign Up</a>
-						<a href="#" class="button">Login</a>
+                        <?php
+                        if(!isset($_SESSION['USER_NAME'])){
+                            echo '<a href="signup.php" class="button">Sign Up</a>
+						        <a href="singin.php" class="button">Login</a>';
+                        }else{
+                            echo ' <!--<a href="basket.php" class="button">Basket</a> -->
+						        <form action="includes/logout.inc.php" method="post" >
+                                    <button type="submit" name="logout-submit" class="button">Sign out</button>
+                            </form>';
+                        }
+                        ?>
 					</nav>	
 				</div>
-				
-				
-					
-				<!-- <div>
-				 	<form action="includes/login.inc.php" method="post">
-				 		<input type="text" name="mailuid" placeholder="Username/E-mail...">
-			 			<input type="password" name="pwd" placeholder="Password...">
-			 			<button type="submit" name="login-submit">Connexion</button>
-				 	</form>
-				 	<a href="signup.php">S'inscrire</a>
-				 	<form action="includes/logout.inc.php" method="post">
-				 		<button type="submit" name="logout-submit">Déconnexion</button>
-				 	</form>
-				</div> -->
-				
-				
+
 			</header>
 				<div class="container">
 					<div id="navigation">
@@ -66,4 +61,3 @@
 					</div>	
 				</div>
 		</div>
-</html>

@@ -2,7 +2,7 @@
 $servername = "localhost";
 $dbUsername = "root";
 $dbPassword = "";
-$dbName = "mysql"; //nom de la base de donnée donnée en PHPMYADMI? 
+$dbName = "loginsystemtest"; //nom de la base de donnée donnée en PHPMYADMI? 
 
 $conn = mysqli_connect($servername, $dbUsername, $dbPassword, $dbName);
 
