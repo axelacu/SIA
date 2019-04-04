@@ -9,14 +9,16 @@ session_start();
 		<link rel="stylesheet" href="style.css" />		
 		<title></title>
 	</head>
+
+
 	<body>
 		<div id="bloc_page">
-			<header>
+			<header id="headerheader">
 				<div class="container">
 					<div id="desktop_logo">
 						<span id="logoLink">
-							<a href="page1.php">
-								<img id="logo_img-responsive" src="images/airblio2.png" alt="AIRBLIO">
+							<a href="header.php">
+								<img id="logo_img-responsive" src="images/airblio4.png" alt="AIRBLIO">
 							</a>
 						</span>
 					</div>
@@ -31,33 +33,37 @@ session_start();
 							</form>
 						</div>
 					</div>
-					
-					<nav>
-                        <?php
-                        if(!isset($_SESSION['USER_NAME'])){
-                            echo '<a href="signup.php" class="button">Sign Up</a>
-						        <a href="singin.php" class="button">Login</a>';
-                        }else{
-                            echo ' <!--<a href="basket.php" class="button">Basket</a> -->
-						        <form action="includes/logout.inc.php" method="post" >
-                                    <button type="submit" name="logout-submit" class="button">Sign out</button>
-                            </form>';
-                        }
-                        ?>
-					</nav>	
-				</div>
 
-			</header>
-				<div class="container">
-					<div id="navigation">
+                    <div id="login">
+                        <nav>
+                            <?php
+                            if(!isset($_SESSION['USER_NAME'])){
+                                echo '<a href="signup.php" class="button">Sign Up</a>
+                                    <a href="singin.php" class="button">Sign In</a>';
+                            }else{
+                                echo ' <!--<a href="basket.php" class="button">Basket</a> -->
+                                    <form action="includes/logout.inc.php" method="post" >
+                                        <button type="submit" name="logout-submit" class="button">Sign out</button>
+                                </form>';
+                            }
+                            ?>
+                        </nav>
+                    </div>
+
+					<div class="sticky" id="navigation">
 						<nav>
 							<ul>
-								<li><a href="index.php">Acceuil</a></li>
-								<li><a href="#">Produit</a></li>
-								<li><a href="#">Service</a></li>
-								<li><a href="#">Assistance</a></li>
+								<li><a href="index.php" id="acceuil" >Acceuil</a></li>
+								<li><a href="#" id="produit">Produit</a></li>
+								<li><a href="#" id="service" >Service</a></li>
+								<li><a href="#" id="assistance" >Assistance</a></li>
 							</ul>
 						</nav>
 					</div>	
+
+
+					
 				</div>
+			</header>
 		</div>
+    </body>

@@ -9,6 +9,19 @@
 
 }
 
+@font-face {
+	font-family: 'pt_sansbold';
+	src: url('polices/PTS75F-webfont.eot');
+	src: url('polices/PTS75F-webfont.eot?#iefix') format('embedded-opentype'),
+	url('polices/PTS75F-webfont.woff2') format('woff2'),
+	url('polices/PTS75F-webfont.woff') format('woff'),
+	url('polices/PTS75F-webfont.ttf') format('truetype'),
+	url('polices/PTS75F-webfont.svg#pt_sansbold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
 * 
 {
 	margin:0;
@@ -29,11 +42,17 @@ body
     margin: 0;
 }
 
-section h1, footer h1, nav a
+section h1, footer h1, nav a, b
 {
-    font-family: quantifyregular;
+    font-family: pt_sansbold;
     font-weight: normal;
     text-transform: uppercase;
+}
+
+label, p
+{
+	font-family: "Open Sans",sans-serif;
+	font-size: .875rem;
 }
 
 main{
@@ -42,38 +61,39 @@ main{
 
 /* Header --------------------------------------------------------------------------------------------------- */
 
-header
+div
+{
+	display: block;
+}
+
+#headerheader
 {
     background: url('images/separateur.png') repeat-x bottom;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-	background-color: #6291EE;
+	background-color: #00318D;
 	margin: 0;
 	padding: 0;
+	position: relative;
+
 }
 
 .container
 {
     width: 1140px;
-	max-width: 100%;
-	padding-left: 15px;
-	padding-right: 15px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 15px;
+	width: 100%;
+	margin-bottom: 0px;
 	margin-top: 35px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	
-	
-
 }
 
 #desktop_logo
 {
-	float: left;
+	margin-left: 30px;
+	width: 35%;
 }
 
 #desktop_logo img
@@ -86,31 +106,40 @@ header
 	
 	vertical-align: middle;
 	border-style: none;
+	height: 50px;
 }
 
 header a
 {
-    font-family: quantifyregular;
+    font-family: pt_sansbold;
     font-weight: normal;
     margin: auto;
+	font-size: 1.2em;
 }
 
 header h2
 {
-    font-family: quantifyregular;
-    font-size: 1.1em;
+    font-family: pt_sansbold;
+    font-size: 1.3em;
     margin-top: 0px;
     font-weight: normal;
 }
+
+h1
+{
+	font-family: pt_sansbold;
+	font-size: 1.3em;
+	margin-top: 0px;
+	font-weight: normal;
+}
+
 
 /* Recherche --------------------------------------------------------------------------------------------------- */
 
 #colonne2
 {
-	margin-top: 7px;
-	width: 65%;
-	display: flex;
-	justify-content: center;
+	margin-top: 11px;
+	width: 40%;
 }
 
 #recherche_p {	
@@ -118,11 +147,11 @@ header h2
 }
 
 #searchthis #search {
-	border-radius: 15px;
+	border-radius: 0px;
 	background-color: #ffffff;   /* Couleur de fond */
 	border-style: solid;   /* Style de la bordure  */
 	border-width: 1px;   /* Epaisseur de la bordure  */
-	border-color: #000000;   /* Couleur de la bordure  */
+	border-color: #F1F0F0;   /* Couleur de la bordure  */
 	padding: 5px 10px 5px 10px;
 	width: 300px;
 }
@@ -132,13 +161,18 @@ header h2
 
 /* Login --------------------------------------------------------------------------------------------------- */
 
+#login
+{
+	margin-right: 30px;
+}
+
  /** Button Style **/
 .button {
   /** Font Style **/
    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   text-transform:uppercase;
   font-size:14px;
-	color:#fff;
+	color:#c5c5c5;
   text-decoration:none;
 	font-weight:bold;
 	text-transform:uppercase;
@@ -151,27 +185,23 @@ header h2
 	vertical-align:middle;
 	vertical-align:auto;
 	zoom:1;
-  margin-top: 2px;
+  margin-top: 4px;
   margin-bottom: 0px;
 	border:1px solid #13619f;
-	background: #2371b7;
+	background: #17469F;
 	padding:11px 20px;
-	-webkit-border-radius:3px;
-	-moz-border-radius:3px;
-	-ms-border-radius:3px;
-	-o-border-radius:3px;
-	border-radius:3px;
-	-webkit-box-shadow:rgba(255, 255, 255, 0.3) 0 1px 0, inset rgba(255, 255, 255, 0.3) 0 1px 0;
-	-moz-box-shadow:rgba(255, 255, 255, 0.3) 0 1px 0, inset rgba(255, 255, 255, 0.3) 0 1px 0;
-	box-shadow:rgba(255, 255, 255, 0.3) 0 1px 0, inset rgba(255, 255, 255, 0.3) 0 1px 0;
+	-webkit-border-radius:0px;
+	-moz-border-radius:0px;
+	-ms-border-radius:0px;
+	-o-border-radius:0px;
+	border-radius:0px;
+
 }
 
 /** Active State Style **/
 .button:active {
 	border-color:#083559;
-	-webkit-box-shadow:rgba(255, 255, 255, 0.2) 0 1px 0, inset rgba(0, 0, 0, 0.25) 0 1px 4px;
-	-moz-box-shadow:rgba(255, 255, 255, 0.2) 0 1px 0, inset rgba(0, 0, 0, 0.25) 0 1px 4px;
-	box-shadow:rgba(255, 255, 255, 0.2) 0 1px 0, inset rgba(0, 0, 0, 0.25) 0 1px 4px;
+
 }
 
 /* Navigation --------------------------------------------------------------------------------------------------- */
@@ -181,31 +211,196 @@ header h2
 {
 	display: flex;
 	justify-content: center;
-	max-width: 100%;
-	
+	width: 100%;
+	margin-top:  32px;
+	background-color: #17469F;
+
 }
 
-nav ul
-{
-    list-style-type: none;
-    display: flex;
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
 }
 
-nav li
-{
-    margin-right: 15px;
+nav li {
+    float: left;
 }
 
-nav a
-{
-    font-size: 1.3em;
-    color: #181818;
-    padding-bottom: 3px;
+nav li a {
+    display: block;
+    color:  #c5c5c5;
+	background-color: #17469F;
+    text-align: center;
+    padding: 14px 90px;
     text-decoration: none;
+	border-color: black;
+	-webkit-font-smoothing: antialiased;
+	letter-spacing: .01rem;
+
+
 }
 
-nav a:hover
-{
-    color: #760001;
-    border-bottom: 3px solid #760001;
+/* Change the link color to #111 (black) on hover */
+nav a:hover {
+    color: #EEEEEE;
 }
+
+
+
+/* Inscription --------------------------------------------------------------------------------------------------- */
+
+.blanc
+{
+	flex: 0 0 680px;
+	-webkit-box-flex: 0;
+	box-sizing: border-box;
+	max-width: 680px;
+	margin: 3.25rem auto;
+	padding: 1.25rem;
+	background-color: #fff;
+}
+
+.inscription
+{
+	-webkit-box-pack: center;
+	text-align: center;
+	-webkit-justify-content: center;
+	display: flex;
+	-webkit-box-flex: 0;
+	flex: 0 1 auto;
+	-webkit-box-orient: horizontal;
+	flex-direction: row;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	max-width: 430px;
+	margin: 0 auto 1.25rem;
+	padding-bottom: 1.25rem;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+#texte2
+{
+	max-width: 450px;
+	margin: 0 auto 1.25rem;
+	text-align: center;
+	color: #999;
+	font-size: .875rem;
+	line-height: 1.5rem;
+	letter-spacing: 0rem;
+	font-family: "Open Sans",sans-serif;
+	font-weight: 400;
+}
+
+* {box-sizing: border-box}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 30px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.9;
+}
+
+button:hover {
+	opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+	padding: 14px 20px;
+	background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+	float: left;
+	width: 50%;
+}
+
+/* Add padding to container elements */
+#signup {
+	padding: 16px;
+	max-width: 430px;
+	margin: 0 auto;
+}
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: #474e5d;
+	padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-color: #fefefe;
+	margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+	border: 1px solid #f1f1f1;
+	margin-bottom: 25px;
+}
+
+/* The Close Button (x) */
+.close {
+	position: absolute;
+	right: 35px;
+	top: 15px;
+	font-size: 40px;
+	font-weight: bold;
+	color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+	color: #f44336;
+	cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+	.cancelbtn, .signupbtn {
+		width: 100%;
+	}
+}
+

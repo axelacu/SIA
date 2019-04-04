@@ -2,16 +2,37 @@
 	require 'header.php';
 ?>
 	<main>
-		<h1>Inscription</h1>
-		
-		<form action="includes/signup.inc.php" method="post">
-			<input type="text" name="uid" placeholder="Username">
-			<input type="text" name="mail" placeholder="E-mail">
-			<input type="password" name="pwd" placeholder="Password">
-			<input type="password" name="pwd-repeat" placeholder="Repear password">
-			<button type="submit" name="signup-submit">S'inscrire </button>
-		</form>
-		
+        <section class="blanc">
+            <div class="inscription">
+                <h1>Sign Up</h1>
+            </div>
+            <p id="texte2">Please fill in this form to create an account.</p>
+
+                <form action="includes/signup.inc.php" method="post">
+                    <div id="signup">
+
+                        <label for="username"><b>Username</b></label>
+                        <input type="text" name="uid" placeholder="Username">
+
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" name="mail" placeholder="E-mail">
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" name="pwd" placeholder="Password">
+
+                        <label for="psw-repeat"><b>Repeat Password</b></label>
+                        <input type="password" name="pwd-repeat" placeholder="Repear password">
+
+                        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+                        <div class="clearfix">
+                            <button type="button" class="cancelbtn">Cancel</button>
+                            <button type="submit" name="signup-submit" class="signupbtn">Sign Up</button>
+                        </div>
+                    </div>
+                </form>
+        </section>
+
 	</main>
 
 <?php
