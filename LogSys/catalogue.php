@@ -14,23 +14,26 @@
                 //On récupère les images des produits du catalogue
                 $dir = 'images_catalogue';
 
-
                 //On récupère les enregistrements de la base de données
-                $req_main = $conn->prepare("SELECT MATERIEL.NOM, MATERIEL.FILE_NAME, MATERIEL.DESCRIPTION FROM MATERIEL");
-                $req_main->execute();
+                $req = "SELECT MATERIEL.file_name, MATERIEL.description, MATERIEL.prix, MATERIEL.nom FROM MATERIEL;";
+
+                $result = mysqli_query($conn,$req);
 
 
                 //On crée une boucle pour afficher les photos avec description
-                while($row = $req_main->fetch()){
-                    $file_name = $row['FILE_NAME'];
-                    $description = $row['DESCRIPTION'];
+                while($row = mysqli_fetch_row($result)){
+                    $file_name = $row[0];
+                    $description = $row[1];
+                    $prix = $row[2];
+                    $nom = $row[3];
 
                     //On affiche le résultat
                     echo '<table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
-                                <td><img src="'.$dir.'/'.$file_name.'" width="150px" height="113px"></td>
+                                <td><p>'.$nom.'</p><img src="'.$dir.'/'.$file_name.'" width="150px" height="113px"></td>
                                 <td>'.$description.'</td>
-                            <tr>
+                                <td>'.$prix.'</td>
+                            </tr>
                           </table>';
                 }
 

@@ -53,8 +53,8 @@ session_start();
 						<nav>
 							<ul>
 								<li><a href="index.php">Accueil</a></li>
-								<li><a href="catalogue.php">Produit</a></li>
-								<li><a href="#">Service</a></li>
+								<li><a href="catalogue.php">Produits</a></li>
+								<li><a href="#">Services</a></li>
 								<li><a href="#">Assistance</a></li>
 							</ul>
 						</nav>
