@@ -53,9 +53,9 @@ session_start();
 					<div class="sticky" id="navigation">
 						<nav>
 							<ul>
-								<li><a href="index.php" id="acceuil" >Acceuil</a></li>
-								<li><a href="#" id="produit">Produit</a></li>
-								<li><a href="#" id="service" >Service</a></li>
+								<li><a href="index.php" id="acceuil" >Accueil</a></li>
+								<li><a href="catalogue.php" id="produit">Produits</a></li>
+								<li><a href="#" id="service" >Services</a></li>
 								<li><a href="#" id="assistance" >Assistance</a></li>
 							</ul>
 						</nav>
