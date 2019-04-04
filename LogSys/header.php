@@ -14,7 +14,7 @@ session_start();
 	<body>
 		<div id="bloc_page">
 			<header id="headerheader">
-				<div class="container">
+				<div class="containerheader">
 					<div id="desktop_logo">
 						<span id="logoLink">
 							<a href="header.php">

@@ -20,7 +20,7 @@
             .carousel-inner img {
                 width: 100%; /* Set width to 100% */
                 margin: auto;
-                min-height:10px;
+                min-height:200px;
             }
 
             /* Hide the carousel text when the screen is less than 600 pixels wide */
@@ -42,7 +42,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img src="images_catalogue/stab-solid.jpg" style="width:20%" alt="Image">
+                    <img src="images/bouteilles_de_gaz.jpg" style="width:45%" alt="Image">
                     <div class="carousel-caption">
                         <h3>Sell $</h3>
                         <p>Money Money.</p>
@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="item">
-                    <img src="images_catalogue/masque-de-plongee-avec-verres-correcteurs-pro.jpg" style="width:20%" alt="Image">
+                    <img src="images/plongeur.jpg" style="width:45%" alt="Image">
                     <div class="carousel-caption">
                         <h3>More Sell $</h3>
                         <p>Lorem ipsum...</p>
