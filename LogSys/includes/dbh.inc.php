@@ -15,15 +15,15 @@ $requetes="";
 
 $sql=file("../sqlQuerys.sql"); // on charge le fichier SQL
 
-echo $sql;
+
 foreach($sql as $l){ // on le lit
     $requetes =$requetes.$l;
 }
-echo $requetes;
 
-$reqs = str_split(";",$requetes);// on sépare les requêtes
+$reqs = explode(';',$requetes);// on sépare les requêtes
 
 foreach($reqs as $req){	// et on les éxécute
+    echo $req;
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$req)){
         die("ERROR".$req);
