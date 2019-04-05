@@ -23,14 +23,7 @@ foreach($sql as $l){ // on le lit
 $reqs = explode(';',$requetes);// on sépare les requêtes
 
 foreach($reqs as $req){	// et on les éxécute
-    echo $req;
-    $stmt = mysqli_stmt_init($conn);
-    if(!mysqli_stmt_prepare($stmt,$req)){
-        die("ERROR".$req);
-    }
-
-    mysqli_stmt_execute($stmt);
-
+    mysqli_query($conn,$req);
 }
 echo "base restaurée";
 ?>
