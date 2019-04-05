@@ -1,0 +1,211 @@
+/* Elements principaux de la page */
+
+@font-face {
+    font-family: 'quantifyregular';
+    src: url('polices/quantify-webfont.woff2') format('woff2'),
+         url('polices/quantify-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* 
+{
+	margin:0;
+	padding:0;
+ }
+
+body
+{
+    background: url('images/horizon-ocean.jpg') no-repeat;
+    background-size: cover;
+    height: 100%;
+    padding-bottom: 40%;
+}
+
+
+#bloc_page
+{
+    margin: 0;
+}
+
+section h1, footer h1, nav a
+{
+    font-family: quantifyregular;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+main{
+
+}
+
+/* Header --------------------------------------------------------------------------------------------------- */
+
+header
+{
+    background: url('images/separateur.png') repeat-x bottom;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+	background-color: #6291EE;
+	margin: 0;
+	padding: 0;
+}
+
+.container
+{
+    width: 1140px;
+	max-width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+	margin-top: 35px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	
+	
+
+}
+
+#desktop_logo
+{
+	float: left;
+}
+
+#desktop_logo img
+{
+	
+}
+
+#logo_img-responsive 
+{
+	
+	vertical-align: middle;
+	border-style: none;
+}
+
+header a
+{
+    font-family: quantifyregular;
+    font-weight: normal;
+    margin: auto;
+}
+
+header h2
+{
+    font-family: quantifyregular;
+    font-size: 1.1em;
+    margin-top: 0px;
+    font-weight: normal;
+}
+
+/* Recherche --------------------------------------------------------------------------------------------------- */
+
+#colonne2
+{
+	margin-top: 7px;
+	width: 65%;
+	display: flex;
+	justify-content: center;
+}
+
+#recherche_p {	
+	
+}
+
+#searchthis #search {
+	border-radius: 15px;
+	background-color: #ffffff;   /* Couleur de fond */
+	border-style: solid;   /* Style de la bordure  */
+	border-width: 1px;   /* Epaisseur de la bordure  */
+	border-color: #000000;   /* Couleur de la bordure  */
+	padding: 5px 10px 5px 10px;
+	width: 300px;
+}
+
+
+
+
+/* Login --------------------------------------------------------------------------------------------------- */
+
+ /** Button Style **/
+.button {
+  /** Font Style **/
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-transform:uppercase;
+  font-size:14px;
+	color:#fff;
+  text-decoration:none;
+	font-weight:bold;
+	text-transform:uppercase;
+	text-shadow:rgba(0, 0, 0, 0.30) 0 -1.25px 0;
+  
+  /** Button Style **/ 
+  display:-moz-inline-stack;
+  -webkit-font-smoothing:antialiased;
+	display:inline-block;
+	vertical-align:middle;
+	vertical-align:auto;
+	zoom:1;
+  margin-top: 2px;
+  margin-bottom: 0px;
+	border:1px solid #13619f;
+	background: #2371b7;
+	padding:11px 20px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	-ms-border-radius:3px;
+	-o-border-radius:3px;
+	border-radius:3px;
+	-webkit-box-shadow:rgba(255, 255, 255, 0.3) 0 1px 0, inset rgba(255, 255, 255, 0.3) 0 1px 0;
+	-moz-box-shadow:rgba(255, 255, 255, 0.3) 0 1px 0, inset rgba(255, 255, 255, 0.3) 0 1px 0;
+	box-shadow:rgba(255, 255, 255, 0.3) 0 1px 0, inset rgba(255, 255, 255, 0.3) 0 1px 0;
+}
+
+/** Active State Style **/
+.button:active {
+	border-color:#083559;
+	-webkit-box-shadow:rgba(255, 255, 255, 0.2) 0 1px 0, inset rgba(0, 0, 0, 0.25) 0 1px 4px;
+	-moz-box-shadow:rgba(255, 255, 255, 0.2) 0 1px 0, inset rgba(0, 0, 0, 0.25) 0 1px 4px;
+	box-shadow:rgba(255, 255, 255, 0.2) 0 1px 0, inset rgba(0, 0, 0, 0.25) 0 1px 4px;
+}
+
+/* Navigation --------------------------------------------------------------------------------------------------- */
+
+
+#navigation
+{
+	display: flex;
+	justify-content: center;
+	max-width: 100%;
+	
+}
+
+nav ul
+{
+    list-style-type: none;
+    display: flex;
+}
+
+nav li
+{
+    margin-right: 15px;
+}
+
+nav a
+{
+    font-size: 1.3em;
+    color: #181818;
+    padding-bottom: 3px;
+    text-decoration: none;
+}
+
+nav a:hover
+{
+    color: #760001;
+    border-bottom: 3px solid #760001;
+}
