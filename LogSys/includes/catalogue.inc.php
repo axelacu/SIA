@@ -44,10 +44,14 @@ for($i =($_GET['page']-1)*$num_of_product_by_page  ; $i<($num_of_product_by_page
         <div class="w3-third">
             <div class="w3-card">
                 <div class="w3-container w3-sand w3-center">
-                  <img class="w3-border w3-margin-top" src="' . $array_material_name[$i][0] . '" alt="' . $array_material_name[$i][3] . '" style="width:40%">
+                  <div class="w3-display-container">
+                      <img class="w3-border w3-margin-top" src="' . $array_material_name[$i][0] . '" alt="' . $array_material_name[$i][3] . '" style="width:40%">
+                        <div class="w3-display-middle w3-display-hover">
+                            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+                        </div>
+                  </div>    
                    <h5 class="w3-top-left-align">' . $array_material_name[$i][3] . '</h5>
                    <h5>' . $array_material_name[$i][2] . '€' . '</h5> 
-                   <p class="w3-padding w3-top-left-align">' . $array_material_name[$i][1] . '</p>       
                </div>
              </div>
         </div>';
@@ -58,10 +62,14 @@ for($i =($_GET['page']-1)*$num_of_product_by_page  ; $i<($num_of_product_by_page
          <div class="w3-third">
             <div class="w3-card">
                 <div class="w3-container w3-sand w3-center">
-                  <img class="w3-border w3-margin-top" src="' . $array_material_name[$i][0] . '" alt="' . $array_material_name[$i][3] . '" style="width:40%">
+                  <div class="w3-display-container">
+                      <img class="w3-border w3-margin-top" src="' . $array_material_name[$i][0] . '" alt="' . $array_material_name[$i][3] . '" style="width:40%">
+                        <div class="w3-display-middle w3-display-hover">
+                            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+                        </div>
+                  </div>    
                    <h5 class="w3-top-left-align">' . $array_material_name[$i][3] . '</h5>
-                   <h5>' . $array_material_name[$i][2] . '€' . '</h5> 
-                   <p class="w3-padding w3-top-left-align">' . $array_material_name[$i][1] . '</p>       
+                   <h5>' . $array_material_name[$i][2] . '€' . '</h5>     
                </div>
              </div>
         </div>';
