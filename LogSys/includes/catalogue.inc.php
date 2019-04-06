@@ -12,7 +12,8 @@ $num_of_product_by_page=9;
 require 'dbh.inc.php';
 
 //On récupère les enregistrements de la base de données
-$req = "SELECT MATERIEL.file_name, MATERIEL.description, MATERIEL.prix, MATERIEL.nom FROM MATERIEL";
+$req = "SELECT DISTINCT MATERIEL.file_name, MATERIEL.description, MATERIEL.prix, MATERIEL.nom 
+        FROM MATERIEL";
 $_GET['TEST']=1;
 $result = mysqli_query($conn,$req);
 echo '<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -82,8 +83,8 @@ echo '</div>';
 $back_page = (($_GET['page']-1)>0? ($_GET['page']-1):($_GET['page']));
 $forward_page = (($_GET['page']+1)<=$_GET['nb_page']? ($_GET['page']+1):($_GET['page']));
 echo ' <div class="w3-center w3-padding-32">
-            <div class="w3-panel w3-sand w3-round" >
-                <div class="w3-bar">
+            <div class="w3-panel w3-round" style="background: #71a5d6">
+                <div class="w3-bar w3-margin">
                     <a href="catalogue.php?page='.$back_page.'&nb_page='.$_GET['nb_page'].'" class="w3-bar-item w3-button w3-hover-black">«</a>';
 
 
