@@ -8,12 +8,9 @@
             <?php
             //On inclue ici le fichier de connexion à la base
             include ('includes/catalogue.inc.php');
-
             ?>
         </div>
     </section>
-
-
 </main>
 
 <?php
