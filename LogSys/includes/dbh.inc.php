@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $dbUsername = "root";
-$dbPassword = "root";
+$dbPassword = "";
 $dbName = "loginsystemtest"; //nom de la base de donnée donnée en PHPMYADMI?
 $conn = mysqli_connect($servername, $dbUsername, $dbPassword, $dbName);
 
@@ -10,21 +10,19 @@ if(!$conn){
     //renvoie d'erreur en cas de non connexion.
 	die("CONNEXION ECHOUE : ".mysqli_connect_error());
 }
-
 $requetes="";
 
-$sql=file("../sqlQuerys.sql"); // on charge le fichier SQL
+$sql=file(__DIR__. "/sqlQuerys.sql"); // on charge le fichier SQL
 
+if(!$sql) {
+    foreach ($sql as $l) { // on le lit
+        $requetes = $requetes . $l;
+    }
 
-foreach($sql as $l){ // on le lit
-    $requetes =$requetes.$l;
+    $reqs = explode(';', $requetes);// on sépare les requêtes
+
+    foreach ($reqs as $req) {    // et on les éxécute
+        mysqli_query($conn, $req);
+    }
 }
-
-$reqs = explode(';',$requetes);// on sépare les requêtes
-
-foreach($reqs as $req){	// et on les éxécute
-    mysqli_query($conn,$req);
-}
-echo "base restaurée";
-?>
 
