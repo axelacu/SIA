@@ -15,14 +15,12 @@ $requetes="";
 $sql=file(__DIR__. "/sqlQuerys.sql"); // on charge le fichier SQL
 
 if($sql) {
-    echo "base restauré";
 
     foreach ($sql as $l) { // on le lit
         $requetes = $requetes . $l;
     }
     $reqs = explode(';', $requetes);// on sépare les requêtes
     foreach ($reqs as $req) {    // et on les éxécute
-        echo $req;
         mysqli_query($conn, $req);
         echo"\n";
     }
