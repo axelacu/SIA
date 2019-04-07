@@ -29,3 +29,13 @@ INSERT IGNORE INTO MATERIEL(NOM,FILE_NAME, DESCRIPTION,PRIX) VALUES ('Trousse d\
 
 
 
+CREATE TABLE IF NOT EXISTS SERVICE(
+  ID_SERVICE int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  LABEL TINYTEXT NOT NULL,
+  FILE_NAME TINYTEXT NOT NULL,
+  DESCRIPTION LONGTEXT
+);
+
+INSERT IGNORE INTO SERVICE(LABEL,FILE_NAME,DESCRIPTION) VALUES ('Installation de matériel', 'equipement_plongee.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.');
+INSERT IGNORE INTO SERVICE(LABEL,FILE_NAME,DESCRIPTION) VALUES ('Maintenance de matériel', 'photo-materiel.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.');
+INSERT IGNORE INTO SERVICE(LABEL,FILE_NAME,DESCRIPTION) VALUES ('Support de surface', 'photo-equipement.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.');

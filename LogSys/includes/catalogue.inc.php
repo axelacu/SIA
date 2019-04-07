@@ -5,11 +5,13 @@
  * Date: 05/04/2019
  * Time: 21:47
  */
-//On récupère les images des produits du catalogue
 
+require 'dbh.inc.php';
+
+//On récupère les images des produits du catalogue
 $dir = 'images_catalogue';
 $num_of_product_by_page=9;
-require 'dbh.inc.php';
+
 
 //On récupère les enregistrements de la base de données
 $req = "SELECT DISTINCT MATERIEL.file_name, MATERIEL.description, MATERIEL.prix, MATERIEL.nom 
