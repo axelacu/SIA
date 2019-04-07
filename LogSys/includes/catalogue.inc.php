@@ -42,41 +42,27 @@ if(!isset($_GET['page'])){
 echo '<div class="w3-row-padding w3-margin-top">';
 
 for($i =($_GET['page']-1)*$num_of_product_by_page  ; $i<($num_of_product_by_page*$_GET['page']) && $i<sizeof($array_material_name);$i++){
-    if($i==0 || $i%3!=0) {
+    if(!($i==0 || $i%3!=0)) {
         echo '
-        <div class="w3-third">
-            <div class="w3-card">
-                <div class="w3-container w3-highway-blue w3-center">
-                  <div class="w3-display-container">
-                      <img class="w3-border w3-margin-top" src="' . $array_material_name[$i][0] . '" alt="' . $array_material_name[$i][3] . '" style="width:40%">
-                        <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
-                        </div>
-                  </div>    
-                   <h5 class="w3-top-left-align">' . $array_material_name[$i][3] . '</h5>
-                   <h5>' . $array_material_name[$i][2] . '€' . '</h5> 
-               </div>
-             </div>
-        </div>';
-    }else{
-        echo'
          </div>
-         <div class="w3-row-padding w3-margin-top">
-         <div class="w3-third">
-            <div class="w3-card">
-                <div class="w3-container w3-highway-blue w3-center">
-                  <div class="w3-display-container">
-                      <img class="w3-border w3-margin-top" src="' . $array_material_name[$i][0] . '" alt="' . $array_material_name[$i][3] . '" style="width:40%">
-                        <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
-                        </div>
-                  </div>    
-                   <h5 class="w3-top-left-align">' . $array_material_name[$i][3] . '</h5>
-                   <h5>' . $array_material_name[$i][2] . '€' . '</h5>     
-               </div>
-             </div>
-        </div>';
+         <div class="w3-row-padding w3-margin-top">';
     }
+    echo '
+    <div class="w3-third">
+        <div class="w3-card">
+            <div class="w3-container w3-highway-blue w3-center">
+              <div class="w3-display-container">
+                  <img class="w3-border w3-margin-top" src="' . $array_material_name[$i][0] . '" alt="' . $array_material_name[$i][3] . '" style="width:40%">
+                    <div class="w3-display-middle w3-display-hover">
+                        <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+                    </div>
+              </div>    
+               <h5 class="w3-top-left-align">' . $array_material_name[$i][3] . '</h5>
+               <h5>' . $array_material_name[$i][2] . '€' . '</h5> 
+           </div>
+         </div>
+    </div>';
+
 }
 echo '</div>';
 
@@ -88,8 +74,6 @@ echo ' <div class="w3-center w3-padding-32">
             <div class="w3-panel w3-round w3-highway-blue">
                 <div class="w3-bar w3-margin">
                     <a href="catalogue.php?page='.$back_page.'&nb_page='.$_GET['nb_page'].'" class="w3-bar-item w3-button w3-hover-black">«</a>';
-
-
 
 for($i=1 ; $i<=$_GET['nb_page'] ; $i++){
     if($_GET['page'] == $i) {
