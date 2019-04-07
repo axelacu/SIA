@@ -38,13 +38,14 @@ session_start();
                         <nav>
                             <?php
                             if(!isset($_SESSION['USER_NAME'])){
-                                echo '<a href="signup.php" class="button">Sign Up</a>
+                                 echo '<a href="signup.php" class="button">Sign Up</a>
                                     <a href="singin.php" class="button">Sign In</a>';
                             }else{
                                 echo ' <!--<a href="basket.php" class="button">Basket</a> -->
-                                    <form action="includes/logout.inc.php" method="post" >
-                                        <button type="submit" name="logout-submit" class="button">Sign out</button>
-                                </form>';
+                                    
+                                    <a href="includes/logout.inc.php" class="button">Sign out</a>
+                                        <img  src="./images/Panier.png"  height="100px"  width="100px" >';
+
                             }
                             ?>
                         </nav>
