@@ -22,7 +22,6 @@ if($sql) {
     $reqs = explode(';', $requetes);// on sépare les requêtes
     foreach ($reqs as $req) {    // et on les éxécute
         mysqli_query($conn, $req);
-        echo"\n";
     }
 }
 
