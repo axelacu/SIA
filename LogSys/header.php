@@ -15,6 +15,8 @@ session_start();
 		<div id="bloc_page">
 			<header id="headerheader">
 				<div class="containerheader">
+
+                    <!-- Logo -->
 					<div id="desktop_logo">
 						<span id="logoLink">
 							<a href="header.php">
@@ -34,6 +36,8 @@ session_start();
 						</div>
 					</div>
 
+
+                    <!-- Inscription / Enregistrement -->
                     <div id="login">
                         <nav>
                             <?php
@@ -51,12 +55,14 @@ session_start();
                         </nav>
                     </div>
 
+
+                    <!-- Barre de menu -->
 					<div class="sticky" id="navigation">
 						<nav>
 							<ul>
 								<li><a href="index.php" id="acceuil" >Accueil</a></li>
 								<li><a href="catalogue.php" id="produit">Produits</a></li>
-								<li><a href="#" id="service" >Services</a></li>
+								<li><a href="services.php" id="service" >Services</a></li>
 								<li><a href="#" id="assistance" >Assistance</a></li>
 							</ul>
 						</nav>
