@@ -14,6 +14,27 @@ CREATE TABLE IF NOT EXISTS MATERIEL(
   PRIX int(11)
 );
 
+
+
+CREATE TABLE IF NOT EXISTS USERBASKET(
+  ID_USERBASKET INT(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  ID_USER INT(11) NOT NULL,
+  DATE_BASKET DATE,
+  ACCEPTED INT(1) NOT NULL
+);
+
+
+CREATE TABLE IF NOT EXISTS BASKET(
+  ID int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  ID_BASKET INT(11) NOT NULL,
+  ID_PRODUCT INT(11) NOT NULL,
+  DATE_BEGINNING DATE,
+  DATE_FINISHING DATE,
+  FOREIGN KEY (ID_PRODUCT) REFERENCES MATERIEL(ID_PRODUCT),
+  FOREIGN KEY (ID_BASKET) REFERENCES USERBASKET(ID_USERBASKET)
+);
+
+
 INSERT IGNORE INTO MATERIEL(NOM,FILE_NAME, DESCRIPTION,PRIX) VALUES ('Mono-bouteille', 'bloc-de-plongee.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.', '50');
 INSERT IGNORE INTO MATERIEL(NOM,FILE_NAME, DESCRIPTION,PRIX) VALUES ('Bi-bouteille', 'bloc_bi_bouteilles.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.', '70');
 INSERT IGNORE INTO MATERIEL(NOM,FILE_NAME, DESCRIPTION,PRIX) VALUES ('Robinetterie', 'robinetterie.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.', '30');
