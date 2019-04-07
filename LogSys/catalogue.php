@@ -1,16 +1,18 @@
 <?php
     require 'header.php';
 ?>
-<link rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Lobster">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
     <style>
         .w3-lobster {
             font-family: "Lobster", serif;
         }
     </style>
+
+
 <main>
     <section>
-
         <div class="w3-container">
             <h2 class="w3-xxxlarge w3-lobster w3-center"><u>Products</u></h2>
             <!--
@@ -31,10 +33,11 @@
             </div>
             -->
         </div>
+
+
         <div id="catalogue">
             <?php
-            //On inclue ici le fichier de connexion à la base
-            include ('includes/catalogue.inc.php');
+                include ('includes/catalogue.inc.php');
             ?>
         </div>
 

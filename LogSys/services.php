@@ -11,8 +11,10 @@
 
 <main>
     <section>
-        <div>
-            Hello!
+        <div id="services">
+            <?php
+                include ('includes/services.inc.php');
+            ?>
         </div>
     </section>
 </main>

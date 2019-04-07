@@ -80,6 +80,10 @@ require 'footer.php';
 ?>
 
 
+
+
+<!-- ANCIEN CARROUSSEL -->
+
 <!--
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!- Indicators --
