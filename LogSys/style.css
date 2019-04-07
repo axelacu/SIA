@@ -162,6 +162,7 @@ h1
 #login
 {
 	margin-right: 30px;
+	float:right;
 }
 
  /** Button Style **/
@@ -405,4 +406,12 @@ hr {
 		width: 100%;
 	}
 }
+
+#item-deroulant {
+	display: block;
+	text-transform: none;
+	color: #17469F;
+}
+
+
 
