@@ -14,13 +14,12 @@ $requetes="";
 
 $sql=file(__DIR__. "/sqlQuerys.sql"); // on charge le fichier SQL
 
-if(!$sql) {
+if($sql) {
+
     foreach ($sql as $l) { // on le lit
         $requetes = $requetes . $l;
     }
-
     $reqs = explode(';', $requetes);// on sépare les requêtes
-
     foreach ($reqs as $req) {    // et on les éxécute
         mysqli_query($conn, $req);
     }
