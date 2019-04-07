@@ -14,7 +14,7 @@
 <main>
     <section>
         <div class="w3-container">
-            <h2 class="w3-xxxlarge w3-lobster w3-center"><u>Products</u></h2>
+            <h2 class="w3-xxxlarge w3-lobster w3-center" style="color: white;border: black"><u>Products</u></h2>
             <!--
             <div class="w3-row">
                 <select class="w3-select" name="option" style="width:20%">
