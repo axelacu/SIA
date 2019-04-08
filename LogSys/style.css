@@ -263,6 +263,7 @@ nav a:hover {
 	margin: 3.25rem auto;
 	padding: 1.25rem;
 	background-color: #fff;
+	border-radius: 10px;
 }
 
 .inscription
@@ -406,11 +407,30 @@ hr {
 	}
 }
 
-#item-deroulant {
-	display: block;
-	text-transform: none;
-	color: #17469F;
+
+.blanc2right{
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 10px;
+    float:left;
+    width:75%;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
+
+.blanc2left{
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 10px;
+    float:right;
+    width: 35%;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+
 
 
 
