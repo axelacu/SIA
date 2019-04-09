@@ -27,11 +27,17 @@ require 'header.php';
             width: 100%;
         }
 
+        input[type=radio] {
+            margin-right: 5px;
+        }
+
         /* Add a background color when the inputs get focus */
         input[type=number]:focus {
             background-color: #ddd;
             outline: none;
         }
+
+
     </style>
 
     <section class="blanc">
@@ -39,11 +45,15 @@ require 'header.php';
             <h1>Register a product</h1>
         </div>
 
-        <form action="includes/register_product.inc.php" method="post">
+        <form action="includes/register_product.inc.php" method="post" enctype="multipart/form-data">
             <div id="signup">
 
-                <label for="name"><b>Name</b></label>
-                <input type="text" name="name" placeholder="Name" style="font">
+                <label for="type"><b>Type</b></label><br/>
+                <input type="radio" name="type" id="type">Product<br>
+                <input type="radio" name="type" id="type">Service<br>
+
+                <label for="label"><b>Name</b></label>
+                <input type="text" name="label" placeholder="Name" style="font">
 
                 <label for="description"><b>Description</b></label>
                 <textarea name="desc"  id="description" placeholder="Description of the product"></textarea>
@@ -52,7 +62,7 @@ require 'header.php';
                 <input type="text" name="price" placeholder="Price">
 
                 <label for="quantity"><b>Quantity</b></label><br/>
-                <input type="number" name="qty" value=0><br/>
+                <input type="number" name="qty" id="quantity" value=0><br/>
 
 
                 <label for="picture">Fichier (tous formats | max. 1 Mo) :</label>

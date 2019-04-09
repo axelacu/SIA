@@ -9,15 +9,13 @@
 if (isset($_POST['register-submit'])) {
     require 'dbh.inc.php';
 
-    $name = $_POST['name'];
+    $name = $_POST['label'];
     $description = $_POST['desc'];
     $price = $_POST['price'];
     $quantity = $_POST['qty'];
-    $file = $_POST['picture'];
+    $file = $_FILES['picture']['name'];
 
-    $target_dir = "images_catalogue/";
-
-    if (empty($name) || empty($description) || empty($price) || empty($file)) {
+    if (empty($name) || empty($price) || empty($file)) {
         header("Location: ../register_product.php?error=emptyfields");
     }
     //vérifier que le prix est un nombre
@@ -28,19 +26,18 @@ if (isset($_POST['register-submit'])) {
     else if (!preg_match("/^[0-9]*$/", $quantity) || $quantity==0) {
         header("Location: ../register_product.php?error=invalidquantity&quantity=".$quantity);
     }
-    else if ($_FILES['mon_fichier']['error'] > 0) {
+    else if ($_FILES['picture']['error'] > 0) {
         header("Location: ../register_product.php?error=invalidfile");
     }
     else{
         //déplacer le fichier dans le dossier images_produit
-        //$resultat = move_uploaded_file($_FILES['mon_fichier']['tmp_name'],'images_catalogue');
+        $target_dir = "/Applications/MAMP/htdocs/SIA/LogSys/images_catalogue/";
+        $resultat = move_uploaded_file($_FILES['picture']['tmp_name'], $target_dir . basename($_FILES['picture']['name']));
 
-        /*if($resultat)
-            header("Location: ../index.php?error=invalidfile");*/
+        if(!$resultat)
+            header("Location: ../index.php?error=invalidfile");
 
-        header("Location: ../register_product.php?error=".$_FILES['picture']['tmp_name']);
-
-        /*//SAFE SQL REQUEST
+        //SAFE SQL REQUEST
         $sql = "SELECT LABEL FROM MATERIEL WHERE LABEL=?";
         $stmt = mysqli_stmt_init($conn);
 
@@ -77,7 +74,7 @@ if (isset($_POST['register-submit'])) {
         }
         //closing  the STATEMENT !!!!!
         mysqli_stmt_close($stmt);
-        mysqli_close($conn);*/
+        mysqli_close($conn);
 
     }
 
