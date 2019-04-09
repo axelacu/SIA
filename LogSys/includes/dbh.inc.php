@@ -21,9 +21,11 @@ if($sql) {
     }
     $reqs = explode(';', $requetes);// on sépare les requêtes
     foreach ($reqs as $req) {    // et on les éxécute
-        echo $req;
         mysqli_query($conn, $req);
+
+        printf("\n");
     }
+
+
 }
 
-echo "base restauré";
