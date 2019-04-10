@@ -16,7 +16,6 @@ require 'header.php';
             <input type="password" name="pwd" placeholder="Password...">
             <button type="submit" name="login-submit">Connexion</button>
         </form>
-        </section>
     </main>
 
 <?php

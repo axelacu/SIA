@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $dbUsername = "root";
-$dbPassword = "root";
+$dbPassword = "";
 $dbName = "loginsystemtest"; //nom de la base de donnée donnée en PHPMYADMI?
 $conn = mysqli_connect($servername, $dbUsername, $dbPassword, $dbName);
 
@@ -22,8 +22,6 @@ if($sql) {
     $reqs = explode(';', $requetes);// on sépare les requêtes
     foreach ($reqs as $req) {    // et on les éxécute
         mysqli_query($conn, $req);
-
-        printf("\n");
     }
 
 

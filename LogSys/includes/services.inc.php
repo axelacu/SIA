@@ -9,7 +9,7 @@
 require 'dbh.inc.php';
 
 $dir = 'images_services';
-$req = "SELECT DISTINCT SERVICE.label, SERVICE.file_name, SERVICE.description FROM SERVICE";
+$req = "SELECT DISTINCT label, file_name, description FROM OFFRE WHERE TYPE_OFFRE=1";
 $result = mysqli_query($conn,$req);
 
 
