@@ -14,8 +14,8 @@ $num_of_product_by_page=9;
 
 
 //On récupère les enregistrements de la base de données
-$req = "SELECT DISTINCT MATERIEL.file_name, MATERIEL.description, MATERIEL.prix, MATERIEL.nom 
-        FROM MATERIEL";
+$req = "SELECT DISTINCT OFFRE.file_name, OFFRE.description, OFFRE.prix, OFFRE.label 
+        FROM OFFRE";
 $_GET['TEST']=1;
 $result = mysqli_query($conn,$req);
 echo '<meta name="viewport" content="width=device-width, initial-scale=1">
