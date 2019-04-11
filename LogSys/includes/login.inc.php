@@ -8,13 +8,13 @@ if (isset($_POST['login-submit'])) {
  	$password = $_POST['pwd'];
 
  	if(empty($mailusername) || empty($password)){
- 		header("Location: ../index.php?error=emptyfields");
+ 		header("Location: ../singin.php?error=emptyfields");
  		exit();
  	}else{
  		$sql="SELECT * FROM users WHERE (USER_NAME=? OR USER_EMAIL=?)";
  		$stmt = mysqli_stmt_init($conn);
  		if (!mysqli_stmt_prepare($stmt,$sql)){
-            header("Location: ../index.php?error=sqlerror1");
+            header("Location: ../singin.php?error=sqlerror1");
             exit();
         }else{
  		    mysqli_stmt_bind_param($stmt,"ss",$mailusername,$mailusername);
@@ -23,7 +23,7 @@ if (isset($_POST['login-submit'])) {
  		    if($row = mysqli_fetch_assoc($result)){
                 $pwdCheck = password_verify($password,$row['USER_PASSWORD']);
                 if($pwdCheck == false){
-                    header("Location: ../index.php?error=wrongpassword");
+                    header("Location: ../singin.php?error=wrongpassword");
                     exit();
                 }else if($password == true){
                     session_start();
@@ -33,17 +33,12 @@ if (isset($_POST['login-submit'])) {
                     exit();
                 }
             }else{
-                header("Location: ../index.php?error=nouser");
+                header("Location: ../singin.php?error=nouser");
                 exit();
             }
-
         }
-
-
-
  	}
-
  } else{
- 	header("Location: ../index.php?");
+ 	header("Location: ../singin.php?");
  	exit();
  }
