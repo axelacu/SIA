@@ -1,11 +1,11 @@
 /* Elements principaux de la page */
 
 @font-face {
-    font-family: 'quantifyregular';
-    src: url('polices/quantify-webfont.woff2') format('woff2'),
-         url('polices/quantify-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'quantifyregular';
+	src: url('polices/quantify-webfont.woff2') format('woff2'),
+	url('polices/quantify-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 
 }
 
@@ -21,55 +21,52 @@
 }
 
 
-*
-{
-	margin:0;
-	padding:0;
- }
+* {
+	margin: 0;
+	padding: 0;
+}
 
-body
-{
-    background: url('images/horizon-ocean.jpg') no-repeat;
-    background-size: cover;
-    height: 100%;
+body {
+	background: url('images/horizon-ocean.jpg') no-repeat;
+	background-size: cover;
+	height: 100%;
+}
+
+html body #bloc_page {
+	font-family: Verdana, sans-serif;
+	font-size: 15px;
+	line-height: 1.5;
 }
 
 
-#bloc_page
-{
-    margin: 0;
+#bloc_page {
+	margin: 0;
 }
 
-section h1, footer h1, nav a, b
-{
-    font-family: pt_sansbold;
-    font-weight: normal;
-    text-transform: uppercase;
+section h1, section h2, footer h1, nav a, b {
+	font-family: pt_sansbold;
+	font-weight: normal;
+	text-transform: uppercase;
 }
 
-label, p
-{
-	font-family: "Open Sans",sans-serif;
+label, p {
+	font-family: "Open Sans", sans-serif;
 	font-size: .875rem;
 }
 
-main{
+main {
 
 }
 
 /* Header --------------------------------------------------------------------------------------------------- */
-
-div
-{
+div {
 	display: block;
 }
 
-#headerheader
-{
-    background: url('images/separateur.png') repeat-x bottom;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+#headerheader {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
 	background-color: #00318D;
 	margin: 0;
 	padding: 0;
@@ -77,8 +74,7 @@ div
 
 }
 
-.containerheader
-{
+.containerheader {
 	width: 100%;
 	margin-bottom: 0px;
 	margin-top: 35px;
@@ -87,43 +83,36 @@ div
 	justify-content: center;
 }
 
-#desktop_logo
-{
-	margin-left: 30px;
-	width: 35%;
+#desktop_logo {
+	margin-left: 50px;
+	margin-right: 30px;
+	padding-top: 5px;
 }
 
-#desktop_logo img
-{
+#desktop_logo img {
 
 }
 
-#logo_img-responsive
-{
+#logo_img-responsive {
 
-	vertical-align: middle;
-	border-style: none;
 	height: 50px;
 }
 
-header a
-{
-    font-family: pt_sansbold;
-    font-weight: normal;
-    margin: auto;
+header a {
+	font-family: pt_sansbold;
+	font-weight: normal;
+	margin: auto;
 	font-size: 1.2em;
 }
 
-header h2
-{
-    font-family: pt_sansbold;
-    font-size: 1.3em;
-    margin-top: 0px;
-    font-weight: normal;
+header h2 {
+	font-family: pt_sansbold;
+	font-size: 1.3em;
+	margin-top: 0px;
+	font-weight: normal;
 }
 
-h1
-{
+h1 {
 	font-family: pt_sansbold;
 	font-size: 1.3em;
 	margin-top: 0px;
@@ -132,73 +121,64 @@ h1
 
 
 /* Recherche --------------------------------------------------------------------------------------------------- */
-
-#colonne2
-{
-	margin-top: 12px;
-	width: 30%;
+#colonne2 {
+	margin: 14px 48px 0 50px;
 }
 
-#recherche_p {
-
-}
 
 #searchthis #search {
 	border-radius: 0px;
-	background-color: #ffffff;   /* Couleur de fond */
-	border-style: solid;   /* Style de la bordure  */
-	border-width: 1px;   /* Epaisseur de la bordure  */
-	border-color: #F1F0F0;   /* Couleur de la bordure  */
+	background-color: #ffffff; /* Couleur de fond */
+	border-style: solid; /* Style de la bordure  */
+	border-width: 1px; /* Epaisseur de la bordure  */
+	border-color: #F1F0F0; /* Couleur de la bordure  */
 	padding: 5px 10px 5px 10px;
 	width: 300px;
 }
 
 
-
-
 /* Login --------------------------------------------------------------------------------------------------- */
-
-#login
-{
+#login {
 	margin-right: 30px;
-	float:right;
+	float: right;
 }
 
- /** Button Style **/
+/** Button Style **/
 .button {
-  /** Font Style **/
-   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  text-transform:uppercase;
-  font-size:14px;
-	color:#c5c5c5;
-  text-decoration:none;
-	font-weight:bold;
-	text-transform:uppercase;
-	text-shadow:rgba(0, 0, 0, 0.30) 0 -1.25px 0;
+	/** Font Style **/
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	text-transform: uppercase;
+	font-size: 14px;
+	color: #F1F0F0;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-shadow: rgba(0, 0, 0, 0.30) 0 -1.25px 0;
 
-  /** Button Style **/
-  display:-moz-inline-stack;
-  -webkit-font-smoothing:antialiased;
-	display:inline-block;
-	vertical-align:middle;
-	vertical-align:auto;
-	zoom:1;
-  margin-top: 4px;
-  margin-bottom: 0px;
-	border:1px solid #13619f;
+	/** Button Style **/
+	display: -moz-inline-stack;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	vertical-align: middle;
+	vertical-align: auto;
+	zoom: 1;
+	margin-top: 0;
+	margin-bottom: 0px;
+	border: 1px solid #13619f;
 	background: #17469F;
-	padding:11px 20px;
-	-webkit-border-radius:0px;
-	-moz-border-radius:0px;
-	-ms-border-radius:0px;
-	-o-border-radius:0px;
-	border-radius:0px;
+	padding: 11px 20px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-ms-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
 
 }
 
 /** Active State Style **/
-.button:active {
-	border-color:#083559;
+.button:hover {
+	border-color: #FFFFFF;
+	color: #FFFFFF;
 
 }
 
@@ -208,54 +188,189 @@ h1
 
 /* Navigation --------------------------------------------------------------------------------------------------- */
 
+.topnav {
+	overflow: hidden;
+}
 
-#navigation
-{
+#myTopnav{
+	width: 100%;
+	margin-top: 32px;
+	background-color: #17469F;
+	display: flex;
+	justify-content: center;
+}
+
+.topnav a {
+	float: left;
+	display: block;
+	color: #c5c5c5;
+	text-align: center;
+	padding: 14px 50px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+
+.topnav nav ul a:hover, a:focus {
+	text-decoration: unset;
+	color: #FFFFFF;
+}
+
+.active {
+	color: white;
+}
+
+.topnav .icon {
+	display: none;
+}
+
+@media screen and (max-width: 715px) {
+	.topnav a:not(:first-child) {display: none;}
+	.topnav a.icon {
+		float: right;
+		display: block;
+		color: #c5c5c5;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	#desktop_logo{
+		margin: 0 0 0 55px;
+	}
+}
+
+@media screen and (max-width: 715px) {
+	.topnav.responsive {position: relative;}
+	.topnav.responsive .icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.topnav.responsive a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+
+	#desktop_logo{
+		width: 100%;
+		float: none;
+		display: flex;
+		justify-content: center;
+		margin: 0;
+		padding: 0;
+	}
+
+	#recherche_p {
+		float: none;
+		display: flex;
+		justify-content: center;
+	}
+
+	#colonne2 {
+		width: 100%;
+		margin-top: 25px;
+	}
+
+	#login {
+		width: 100%;
+		float: none;
+		display: flex;
+		justify-content: center;
+		margin: 8px 0 0 0;
+		padding: 0;
+
+	}
+
+	#myTopnav {
+		margin-top: 15px;
+	}
+
+	#assistance {
+		text-align: center;
+	}
+
+	#service {
+		text-align: center;
+	}
+
+	#acceuil {
+		text-align: center;
+	}
+
+	#produit {
+		text-align: center;
+	}
+
+}
+
+@media screen and (max-width: 1100px) {
+
+	#login {
+		width: 100%;
+		float: none;
+		display: flex;
+		justify-content: center;
+		margin: 15px 0 0 0;
+		padding: 0;
+
+	}
+
+}
+
+
+/* Change the link color to #111 (black) on hover
+nav a:hover {
+	color: #FFFFFF;
+}
+
+nav a:hover, a:focus {
+	text-decoration: unset;
+}
+
+#navigation {
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	margin-top:  32px;
+	margin-top: 32px;
 	background-color: #17469F;
 
 }
 
-ul {
+#barre_nav {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: #333;
+
+}
+
+ol, ul {
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 nav li {
-    float: left;
+	float: left;
 }
 
 nav li a {
-    display: block;
-    color:  #c5c5c5;
+	display: block;
+	color: #c5c5c5;
 	background-color: #17469F;
-    text-align: center;
-    padding: 14px 90px;
-    text-decoration: none;
+	text-align: center;
+	padding: 14px 90px;
+	text-decoration: none;
 	border-color: black;
 	-webkit-font-smoothing: antialiased;
 	letter-spacing: .01rem;
-
-
 }
 
-/* Change the link color to #111 (black) on hover */
-nav a:hover {
-    color: #EEEEEE;
-}
-
+*/
 
 
 /* Inscription --------------------------------------------------------------------------------------------------- */
-
-.blanc
-{
+.blanc {
 	flex: 0 0 680px;
 	-webkit-box-flex: 0;
 	box-sizing: border-box;
@@ -266,8 +381,7 @@ nav a:hover {
 	border-radius: 10px;
 }
 
-.inscription
-{
+.inscription {
 	-webkit-box-pack: center;
 	text-align: center;
 	-webkit-justify-content: center;
@@ -284,8 +398,7 @@ nav a:hover {
 	border-bottom: 1px solid #e8e8e8;
 }
 
-#texte2
-{
+#texte2 {
 	max-width: 450px;
 	margin: 0 auto 1.25rem;
 	text-align: center;
@@ -293,11 +406,14 @@ nav a:hover {
 	font-size: .875rem;
 	line-height: 1.5rem;
 	letter-spacing: 0rem;
-	font-family: "Open Sans",sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 }
 
-* {box-sizing: border-box}
+* {
+	box-sizing: border-box
+}
+
 /* Full-width input fields */
 input[type=text], input[type=password] {
 	width: 100%;
@@ -326,9 +442,6 @@ button {
 	opacity: 0.9;
 }
 
-button:hover {
-	opacity:1;
-}
 
 /* Extra styles for the cancel button */
 .cancelbtn {
@@ -343,7 +456,7 @@ button:hover {
 }
 
 /* Add padding to container elements */
-#signup {
+.signup_in {
 	padding: 16px;
 	max-width: 430px;
 	margin: 0 auto;
@@ -408,35 +521,152 @@ hr {
 }
 
 
-.blanc2right{
-    display: inline-block;
-    background-color: #fff;
-    border-radius: 10px;
-    float:left;
-    width:70%;
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-bottom: 20px;
-    height: 400px;
+.blanc2right {
+	display: inline-block;
+	background-color: #fff;
+	border-radius: 10px;
+	float: left;
+	width: 70%;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	height: 400px;
 }
 
-.blanc2left{
-    display: inline-block;
-    background-color: #fff;
-    border-radius: 10px;
-    float:right;
-    width: 30%;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    height:400px;
-}
-
-
-#demand{
-    max-width:1200px;
+.blanc2left {
+	display: inline-block;
+	background-color: #fff;
+	border-radius: 10px;
+	float: right;
+	width: 30%;
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	height: 400px;
 }
 
 
+/* RECHERCHE --------------------------------------------------------------------------------------------------- */
+#catalogue_barre {
+	padding-bottom: 10px;
+	margin-bottom: 2.25rem;
+	border-bottom: 1px solid #212121;
+}
+
+.wrapper_navsection {
+	padding-top: 1.563rem;
+}
+
+.contenair_navsection {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 1140px;
+	max-width: 100%;
+}
+
+.titre_navsection {
+	text-transform: uppercase;
+	color: #212121;
+	font-size: 1.5rem;
+	margin-bottom: .5rem;
+	font-weight: 700;
+	line-height: 1.1;
+	font-family: pt_sansbold;
+	font-weight: normal;
+	text-transform: uppercase;
 
 
+}
+
+#result_recherche {
+	padding-top: .625rem;
+	padding-left: 0;
+	color: #212121;
+	font-weight: 700;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#conteneur_result_recherche {
+	padding-bottom: 20px;
+	margin-bottom: 2.25rem;
+	border-bottom: 1px solid #212121;
+}
+
+/* RESPONSIVE --------------------------------------------------------------------------------------------------------*/
+
+@media (max-width: 400px) {
+	* {
+		box-sizing: border-box;
+	}
+
+	/* passer body (et tous les éléments de largeur fixe) en largeur automatique */
+	body {
+		width: auto;
+		margin: 0;
+		padding: 0;
+	}
+
+	/* fixer une largeur maximale de 100% aux éléments potentiellement problématiques */
+	img,
+	table,
+	td,
+	blockquote,
+	code,
+	pre,
+	textarea,
+	input,
+	iframe,
+	object,
+	embed,
+	video {
+		max-width: 100%;
+	}
+
+	/* conserver le ratio des images */
+	img {
+		height: auto;
+	}
+
+	/* gestion des mots longs */
+	textarea,
+	table,
+	td,
+	th,
+	code,
+	pre,
+	samp {
+		-webkit-hyphens: auto; /* césure propre */
+		-moz-hyphens: auto;
+		hyphens: auto;
+		word-wrap: break-word; /* passage à la ligne forcé */
+	}
+
+	code,
+	pre,
+	samp {
+		white-space: pre-wrap; /* passage à la ligne spécifique pour les éléments à châsse fixe */
+	}
+
+	/* Passer à une seule colonne (à appliquer aux éléments multi-colonnes) */
+	.element1,
+	.element2 {
+		float: none;
+		width: auto;
+	}
+
+	/* masquer les éléments superflus */
+	.hide_mobile {
+		display: none !important;
+	}
+
+	/* Un message personnalisé */
+	body:before {
+		content: "Version mobile du site";
+		display: block;
+		text-align: center;
+		font-style: italic;
+		color: #777;
+	}
+}

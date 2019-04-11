@@ -8,6 +8,8 @@ session_start();
     <meta name="AIRBLIOLOGSYS" content="AIRBLIO FOR FUTURE">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title></title>
 </head>
 
@@ -18,7 +20,7 @@ session_start();
         <div class="containerheader">
             <div id="desktop_logo">
 						<span id="logoLink">
-							<a href="header.php">
+							<a href="index.php">
 								<img id="logo_img-responsive" src="images/airblio4.png" alt="AIRBLIO">
 							</a>
 						</span>
@@ -28,10 +30,10 @@ session_start();
             <!-- Barre de recherche -->
             <div id="colonne2">
                 <div id="recherche_p" >
+                        <form action="recherche.php" id="searchthis" method="get">
+                                <input id="search" name="q" type="search" placeholder="Rechercher" />
+                        </form>
 
-                    <form action="/search" id="searchthis" method="get">
-                        <input id="search" name="q" type="text" placeholder="Rechercher" />
-                    </form>
                 </div>
             </div>
 
@@ -39,8 +41,18 @@ session_start();
                 <nav>
                     <?php
                     if(!isset($_SESSION['USER_NAME'])){
-                        echo '<a href="signup.php" class="button">Sign Up</a>
-                                    <a href="singin.php" class="button">Sign In</a>';
+
+                        echo '<div class="w3-container">
+                                  <div class="w3-bar">
+                                        <form class="w3-bar-item">
+                                            <a href="signup.php" class="button">Sign Up</a>
+                                        </form> 
+                                          
+                                        <div class="w3-bar-item">
+                                            <a href="singin.php" class="button">Sign In</a>
+                                        </div>
+                                   </div>
+                              </div>';
                     }else{
                         echo ' <!--<a href="basket.php" class="button">Basket</a> -->
                                 
@@ -50,8 +62,8 @@ session_start();
                                                 <button type="submit" name="logout-submit" class="button">Sign out</button>
                                         </form> 
                                           
-                                          <div class="w3-dropdown-click" style="margin-top: 12px;">
-                                            <button onclick="myFunction()" class="button" style="margin-top: 0">My Account</button>
+                                          <div class="w3-bar-item" >
+                                            <button onclick="myFunction()" class="button" style="margin-top:0">My Account</button>
                                             <div id="myaccount" class="w3-dropdown-content w3-bar-block">
                                               <a href="commands.php" class="w3-bar-item w3-button button">Commands</a>
                                               <a href="demands.php" class="w3-bar-item w3-button button">Demands</a>
@@ -78,16 +90,29 @@ session_start();
                 </nav>
             </div>
 
-            <div class="sticky" id="navigation">
+            <div class="topnav" id="myTopnav">
                 <nav>
-                    <ul>
-                        <li><a href="index.php" id="acceuil" >Accueil</a></li>
-                        <li><a href="catalogue.php" id="produit">Produits</a></li>
-                        <li><a href="services.php" id="service" >Services</a></li>
-                        <li><a href="#" id="assistance" >Assistance</a></li>
+                    <ul id="barre_nav" style="margin-bottom: 0">
+                        <a href="index.php" class="active" id="acceuil" >Accueil</a>
+                        <a href="catalogue.php" id="produit">Produits</a>
+                        <a href="services.php" id="service" >Services</a>
+                        <a href="#" id="assistance" >Assistance</a>
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                            <i class="fa fa-bars"></i></a>
                     </ul>
                 </nav>
             </div>
+
+            <script>
+                function myFunction() {
+                    var x = document.getElementById("myTopnav");
+                    if (x.className === "topnav") {
+                        x.className += " responsive";
+                    } else {
+                        x.className = "topnav";
+                    }
+                }
+            </script>
 
 
 

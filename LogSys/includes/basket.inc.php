@@ -86,10 +86,7 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
             <p>Vous n\'avez pas de demande en cours.</p>
             ';
     }
-} else {
-
 }
 
 
-
-mysqli_free_result($resultat);
+mysqli_free_result($result);
