@@ -14,8 +14,8 @@ $num_of_product_by_page=9;
 
 
 //On récupère les enregistrements de la base de données
-$req = "SELECT DISTINCT OFFRE.file_name, OFFRE.description, OFFRE.prix, OFFRE.label 
-        FROM OFFRE";
+$req = "SELECT DISTINCT OFFRE.file_name, OFFRE.description, OFFRE.prix, OFFRE.label, OFFRE.type_offre 
+        FROM OFFRE WHERE type_offre=0;";
 $_GET['TEST']=1;
 $result = mysqli_query($conn,$req);
 echo '<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,8 @@ while($row = mysqli_fetch_row($result)){
     $description = $row[1];
     $prix = $row[2];
     $nom = $row[3];
-    $attrbuttes = array($file_name,$description,$prix,$nom);
+    $type = $row[4];
+    $attrbuttes = array($file_name,$description,$prix,$nom,$type);
     array_push($array_material_name, $attrbuttes);
 }
 //DEFINE VARIABLE FOR PAGINATION.
@@ -56,9 +57,12 @@ for($i =($_GET['page']-1)*$num_of_product_by_page  ; $i<($num_of_product_by_page
               <div class="w3-display-container">
                   <img class="w3-border w3-margin-top" src="' . $array_material_name[$i][0] . '" alt="' . $array_material_name[$i][3] . '" style="width:40%">
                     <div class="w3-display-middle w3-display-hover">
-                        <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+                        <a href="display_product.php?label=' . $array_material_name[$i][3] .'&type_offre='.$array_material_name[$i][4].'&file_name='.$array_material_name[$i][0].'&description='.$array_material_name[$i][1].'&prix='.$array_material_name[$i][2].'" 
+                            target="_blank">
+                            <button type="submit" name="display_product" class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+                        </a>
                     </div>
-              </div>    
+              </div>
                <h5 class="w3-top-left-align">' . $array_material_name[$i][3] . '</h5>
                <h5>' . $array_material_name[$i][2] . '€' . '</h5> 
            </div>

@@ -11,6 +11,10 @@
 
 <main>
     <section>
+        <div class="w3-container">
+            <h2 class="w3-xxxlarge w3-lobster w3-center" style="color: white;border: black"><u>Services</u></h2>
+        </div>
+
         <div id="services">
             <?php
                 include ('includes/services.inc.php');
