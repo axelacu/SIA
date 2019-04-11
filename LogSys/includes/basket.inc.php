@@ -11,7 +11,7 @@ require "dbh.inc.php";
 
 
 //on récupere les enregistrements qui n'ont pas encore été validé
-$req= "SELECT D.DATE_DEMANDE, D.REMARQUE, D.DATE_START, D.DATE_END, I.LABEL, I.DESCRIPTION, D.QUANTITE_DEMAND, I.FILE_NAME, I.PRIX FROM DEMAND D, OFFRE I WHERE D.ID_OFFRE=I.ID_OFFRE ";
+$req= "SELECT D.DATE_DEMANDE, D.REMARQUE, D.DATE_START, D.DATE_END, I.LABEL, I.DESCRIPTION, D.QUANTITE_DEMAND, I.FILE_NAME, I.PRIX FROM DEMAND D, OFFRE I WHERE D.ID_OFFRE=I.ID_OFFRE AND D.ID_USER=".$_SESSION['USER_ID'];
 $result = mysqli_query($conn,$req);
 
 
@@ -24,7 +24,7 @@ $total=0;
 if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
     if(mysqli_num_rows($result)) {
         echo '
-        <section class="blanc" id="demand">
+        <section class="blanc" id="demand" style="margin-bottom: 0px">
             <div class="inscription">
                 <h1>My demands</h1>
             </div>
@@ -46,7 +46,7 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
                             <img src="./images_catalogue/' . $donnees[7] . '" style="width:60%">
                         </td>
                         <td style="width: 600px"> 
-                            ' . $donnees[5] . '
+                            '.$donnees[5].'
                             </br> </br></br>
                             <a style="color: #3a768f; float: left; " href="">Supprimer cette article</a>
                         </td>
@@ -63,13 +63,13 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
         </table>
         </div>
         </section>
-        <div id="global" style="">
-        <section class ="blanc" id="demand" style="max-width: 30%% ;display: inline-block">
+        <div id="global" style="margin-left: auto; margin-right: auto ;width: 1200px" height:100%>
+        <section class ="blanc" id="demand" style="width: 75% ;display: inline-block;margin-top: 20px; float: left" >
         <div class="inscription">
-                <h1>vous pourriez aussi aimez </h1>
+                <h1 style="width: 100%;">vous pourriez aussi aimez </h1>
             </div>
         </section>
-        <section class ="blanc" id="demand" style="max-width: 70% ;display: inline-block; position: absolute"; top:"50% " >
+        <section class ="blanc" id="demand" style="width: 23% ;display: inline-block; margin-top:20px; float: right ; height:300px"  >
         <div class="inscription">
                 <h1>TOTAL </h1>
             </div>
