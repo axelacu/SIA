@@ -14,10 +14,31 @@ $num_of_product_by_page=9;
 
 
 //On récupère les enregistrements de la base de données
-$req = "SELECT DISTINCT OFFRE.file_name, OFFRE.description, OFFRE.prix, OFFRE.label, OFFRE.type_offre 
-        FROM OFFRE WHERE type_offre=0;";
+$req = "SELECT DISTINCT OFFRE.file_name, OFFRE.description, OFFRE.prix, OFFRE.label, OFFRE.type_offre
+        FROM OFFRE";
 $_GET['TEST']=1;
 $result = mysqli_query($conn,$req);
+$count = mysqli_num_rows($result);
+
+
+echo('<div class="contenair_navsection">
+        <section class="wrapper_navsection">
+            <div class="titre_navsection" >               
+                    Liste des produits
+            </div>   
+            
+            <section id="produits">
+            <div id>
+                <div id="conteneur_result_recherche">
+                    <div id=result_recherche>                         
+                        Il y a ').$count.(' produit(s).<br>
+                    </div>
+                </div>
+            </div>
+        </section>                     
+    </div>');
+
+
 echo '<meta name="viewport" content="width=device-width, initial-scale=1">
        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-highway.css">';
@@ -30,8 +51,8 @@ while($row = mysqli_fetch_row($result)){
     $prix = $row[2];
     $nom = $row[3];
     $type = $row[4];
-    $attrbuttes = array($file_name,$description,$prix,$nom,$type);
-    array_push($array_material_name, $attrbuttes);
+    $attributes = array($file_name,$description,$prix,$nom,$type);
+    array_push($array_material_name, $attributes);
 }
 //DEFINE VARIABLE FOR PAGINATION.
 if(!isset($_GET['page'])){
