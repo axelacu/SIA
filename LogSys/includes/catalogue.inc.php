@@ -53,9 +53,9 @@ for($i =($_GET['page']-1)*$num_of_product_by_page  ; $i<($num_of_product_by_page
     echo '
     <div class="w3-third">
         <div class="w3-card">
-            <div class="w3-container w3-highway-blue w3-center">
+            <div class="w3-container w3-center" style="background-color: #17469F; color:#EEEEEE">
               <div class="w3-display-container">
-                  <img class="w3-border w3-margin-top" src="' . $array_material_name[$i][0] . '" alt="' . $array_material_name[$i][3] . '" style="width:40%">
+                  <img class="w3-border w3-round-medium w3-margin-top" src="' . $array_material_name[$i][0] . '" alt="' . $array_material_name[$i][3] . '" style="width:40%">
                     <div class="w3-display-middle w3-display-hover">
                         <a href="display_product.php?label=' . $array_material_name[$i][3] .'&type_offre='.$array_material_name[$i][4].'&file_name='.$array_material_name[$i][0].'&description='.$array_material_name[$i][1].'&prix='.$array_material_name[$i][2].'" 
                             target="_blank">
@@ -77,13 +77,13 @@ echo '</div>';
 $back_page = (($_GET['page']-1)>0? ($_GET['page']-1):($_GET['page']));
 $forward_page = (($_GET['page']+1)<=$_GET['nb_page']? ($_GET['page']+1):($_GET['page']));
 echo ' <div class="w3-center w3-padding-32">
-            <div class="w3-panel w3-round w3-highway-blue">
+            <div class="w3-panel w3-round" style="background-color: #17469F; color: #EEEEEE;">
                 <div class="w3-bar w3-margin">
                     <a href="catalogue.php?page='.$back_page.'&nb_page='.$_GET['nb_page'].'" class="w3-bar-item w3-button w3-hover-black">«</a>';
 
 for($i=1 ; $i<=$_GET['nb_page'] ; $i++){
     if($_GET['page'] == $i) {
-        echo '          <a href="catalogue.php?page=' . $i . '&nb_page=' . $_GET['nb_page'] . '" class="w3-bar-item w3-black w3-button">' . $i . '</a>';
+        echo '          <a href="catalogue.php?page=' . $i . '&nb_page=' . $_GET['nb_page'] . '" class="w3-bar-item w3-white w3-button">' . $i . '</a>';
     }else{
         echo '          <a href="catalogue.php?page=' . $i . '&nb_page=' . $_GET['nb_page'] . '" class="w3-bar-item w3-button w3-hover-black">' . $i . '</a>';
     }

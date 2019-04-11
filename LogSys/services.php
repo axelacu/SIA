@@ -12,7 +12,7 @@
 <main>
     <section>
         <div class="w3-container">
-            <h2 class="w3-xxxlarge w3-lobster w3-center" style="color: white;border: black"><u>Services</u></h2>
+            <h2 class="w3-xxxlarge w3-center" style="font-family:pt_sansbold; color: #EEEEEE;border: black">Services</h2>
         </div>
 
         <div id="services">

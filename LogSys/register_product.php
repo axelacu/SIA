@@ -20,7 +20,7 @@ require 'header.php';
         {
             if (document.getElementById('product').checked)
             {
-                document.getElementById('a_masquer').style.display = 'block';
+                document.getElementById(id).style.display = 'block';
             }
             if (document.getElementById('serv').checked)
             {
@@ -80,8 +80,8 @@ require 'header.php';
                 <input type="text" name="price" placeholder="Price">
 
                 <div id="a_masquer">
-                <label for="quantity"><b>Quantity</b></label><br/>
-                <input type="number" name="qty" id="quantity" value=0><br/>
+                    <label for="quantity"><b>Quantity</b></label><br/>
+                    <input type="number" name="qty" id="quantity" value=0><br/>
                 </div>
 
                 <label for="picture">Fichier (tous formats | max. 1 Mo) :</label>
