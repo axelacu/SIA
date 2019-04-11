@@ -8,6 +8,8 @@ session_start();
     <meta name="AIRBLIOLOGSYS" content="AIRBLIO FOR FUTURE">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title></title>
 </head>
 
@@ -88,16 +90,29 @@ session_start();
                 </nav>
             </div>
 
-            <div class="sticky" id="navigation">
+            <div class="topnav" id="myTopnav">
                 <nav>
                     <ul id="barre_nav" style="margin-bottom: 0">
-                        <li><a href="index.php" id="acceuil" >Accueil</a></li>
-                        <li><a href="catalogue.php" id="produit">Produits</a></li>
-                        <li><a href="services.php" id="service" >Services</a></li>
-                        <li><a href="#" id="assistance" >Assistance</a></li>
+                        <a href="index.php" class="active" id="acceuil" >Accueil</a>
+                        <a href="catalogue.php" id="produit">Produits</a>
+                        <a href="services.php" id="service" >Services</a>
+                        <a href="#" id="assistance" >Assistance</a>
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                            <i class="fa fa-bars"></i></a>
                     </ul>
                 </nav>
             </div>
+
+            <script>
+                function myFunction() {
+                    var x = document.getElementById("myTopnav");
+                    if (x.className === "topnav") {
+                        x.className += " responsive";
+                    } else {
+                        x.className = "topnav";
+                    }
+                }
+            </script>
 
 
 
