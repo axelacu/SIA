@@ -63,9 +63,9 @@ session_start();
                                         </form> 
                                           
                                           <div class="w3-bar-item" >
-                                            <button onclick="myFunction()" class="button" style="margin-top:0">My Account</button>
-                                            <div id="myaccount" class="w3-dropdown-content w3-bar-block">
-                                              <a href="commands.php" class="w3-bar-item w3-button button">Commands</a>
+                                            <button onclick="my_Function1()" class="button" style="margin-top:0">My Account</button>
+                                            <div id="myaccount" class="w3-dropdown-content w3-bar-block" style="background:#1883ba; color: white;">
+                                              <a href="commands_client.php" class="w3-bar-item w3-button button">Commands</a>
                                               <a href="demands.php" class="w3-bar-item w3-button button">Demands</a>
                                             </div>
                                           </div>
@@ -73,7 +73,7 @@ session_start();
                                   </div>
                                 </div>
                                 <script>
-                                    function myFunction() {
+                                    function my_Function1() {
                                       var x = document.getElementById("myaccount");
                                       if (x.className.indexOf("w3-show") == -1) {
                                         x.className += " w3-show";
