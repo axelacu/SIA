@@ -15,18 +15,20 @@ if (isset($_GET['label']) && isset($_GET['type_offre']) && isset($_GET['file_nam
     echo '
         <section class="blanc">
             <link rel="stylesheet" href="style.css" />
+               <div class="w3-half">
+                    <img class="w3-margin-left w3-margin-top" src="' . $attributes[2] . '" alt="' . $attributes[2] . '" style="width:60%">
+               </div>
                <div>
                     <h1>'.$attributes[0].'</h1>
-                    <img class="w3-border w3-margin-top" src="' . $attributes[2] . '" alt="' . $attributes[2] . '" style="width:40%">
-                    <p> ' . $attributes[3] . '</p>
-                    <h5>' . $attributes[4] . '€' . '</h5> 
+                    
+                    <h5>' . $attributes[3] . '</h5>
+                    <h5 class="w3-padding-32">' . $attributes[4] . '€' . '</h5> 
                     <a href="#.php">
-                        <button type="submit" name="add_basket" class="w3-button w3-black">Add to basket<i class="fa fa-shopping-cart"></i></button>
+                        <button type="submit" name="add_basket" class="w3-button w3-black w3-round-large">Add to basket<i class="fa fa-shopping-cart"></i></button>
                     </a>
                   
                </div>
-               
-            </section>';
+        </section>';
 
 }
 
