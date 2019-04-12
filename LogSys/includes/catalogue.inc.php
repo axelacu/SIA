@@ -14,7 +14,7 @@ $num_of_product_by_page=9;
 
 
 //On récupère les enregistrements de la base de données
-$req = "SELECT DISTINCT OFFRE.file_name, OFFRE.description, OFFRE.prix, OFFRE.label, OFFRE.type_offre
+$req = "SELECT DISTINCT OFFRE.file_name, OFFRE.description, OFFRE.prix, OFFRE.label, OFFRE.type_offre, OFFRE.id_offre
         FROM OFFRE WHERE type_offre=0";
 $_GET['TEST']=1;
 $result = mysqli_query($conn,$req);
@@ -51,7 +51,8 @@ while($row = mysqli_fetch_row($result)){
     $prix = $row[2];
     $nom = $row[3];
     $type = $row[4];
-    $attributes = array($file_name,$description,$prix,$nom,$type);
+    $id_offre = $row[5];
+    $attributes = array($file_name,$description,$prix,$nom,$type,$id_offre);
     array_push($array_material_name, $attributes);
 }
 //DEFINE VARIABLE FOR PAGINATION.
@@ -78,14 +79,14 @@ for($i =($_GET['page']-1)*$num_of_product_by_page  ; $i<($num_of_product_by_page
               <div class="w3-display-container w3-border w3-margin-top">
                   <img class="w3-margin-top w3-margin-bottom" src="' . $array_material_name[$i][0] . '" alt="' . $array_material_name[$i][3] . '" style="width:40%">
                     <div class="w3-display-middle w3-display-hover">
-                        <a href="display_product.php?label=' . $array_material_name[$i][3] .'&type_offre='.$array_material_name[$i][4].'&file_name='.$array_material_name[$i][0].'&description='.$array_material_name[$i][1].'&prix='.$array_material_name[$i][2].'" 
+                        <a href="display_product.php?label=' . $array_material_name[$i][3] .'&type_offre='.$array_material_name[$i][4].'&file_name='.$array_material_name[$i][0].'&description='.$array_material_name[$i][1].'&prix='.$array_material_name[$i][2].'&id_offre='.$array_material_name[$i][5].'" 
                             target="_blank">
                             <button type="submit" name="display_product" class="w3-button w3-black">View <i class="fa fa-shopping-cart"></i></button>
                         </a>
                     </div>
               </div>
               <div id="lien_catalogue">
-                <a href="display_product.php?label=' . $array_material_name[$i][3] .'&type_offre='.$array_material_name[$i][4].'&file_name='.$array_material_name[$i][0].'&description='.$array_material_name[$i][1].'&prix='.$array_material_name[$i][2].'">
+                <a href="display_product.php?label=' . $array_material_name[$i][3] .'&type_offre='.$array_material_name[$i][4].'&file_name='.$array_material_name[$i][0].'&description='.$array_material_name[$i][1].'&prix='.$array_material_name[$i][2].'&id_offre='.$array_material_name[$i][5].'">
                     <h5 class="w3-top-left-align"><b>' . $array_material_name[$i][3] . '</b></h5>
                 </a>
                 <h5><b>' . $array_material_name[$i][2] . '€' . '</b></h5> 

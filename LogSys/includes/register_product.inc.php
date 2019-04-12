@@ -84,7 +84,6 @@ if (isset($_POST['register-submit'])) {
         //closing  the STATEMENT !!!!!
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
-
     }
 
 
