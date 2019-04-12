@@ -20,7 +20,7 @@ if($result) {
                         <td style="text-align: center">' . $donnees[5] . '</td>
                         <td style="text-align: center">' . $donnees[6] . '</td>
                         <td style="text-align: center">' . $donnees[7] . '</td>
-                        <td style="text-align: center"><button class="button" style="color: #3a768f; float: left; ">PAY</button></td>
+                        <td style="text-align: center"><button class="button" style="color: white; float: left; background: black ">Valider</button></td>
                     </tr>
         ';
 

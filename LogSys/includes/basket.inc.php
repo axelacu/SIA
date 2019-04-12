@@ -60,6 +60,7 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
         echo '           
         </table>
         </div>
+        <div> <button class="button" style="color: #3a768f; float: left; ">Valider ma demande</button></div>
         </section>
         <div id="global" style="margin-left: auto; margin-right: auto ;width: 1200px; height: 300px;" >
         <section class ="blanc" id="demand" style="width: 75% ;display: inline-block;margin-top: 20px; float: left ; height: 100%" >
