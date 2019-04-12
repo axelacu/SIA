@@ -27,7 +27,7 @@
 }
 
 body {
-	background: url('images/horizon-ocean.jpg') no-repeat;
+	background-color: #E3E3E3;
 	background-size: cover;
 	height: 100%;
 }
@@ -119,6 +119,12 @@ h1 {
 	font-weight: normal;
 }
 
+body #numero_page {
+	font-family: pt_sansbold;
+	font-size: 17px;
+	margin-top: 0px;
+	font-weight: normal;
+}
 
 /* Recherche --------------------------------------------------------------------------------------------------- */
 #colonne2 {
@@ -374,11 +380,19 @@ nav li a {
 	flex: 0 0 680px;
 	-webkit-box-flex: 0;
 	box-sizing: border-box;
-	max-width: 680px;
 	margin: 3.25rem auto;
 	padding: 1.25rem;
 	background-color: #fff;
-	border-radius: 10px;
+	border-radius: 0px;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+#signin{
+	max-width: 680px;
+}
+
+#signup{
+	max-width: 680px;
 }
 
 .inscription {
@@ -669,4 +683,35 @@ hr {
 		font-style: italic;
 		color: #777;
 	}
+}
+
+/* CATALOGUE -------------------------------------------------------------------------------------------------------- */
+#barre_pagination {
+	background-color: #17469F;
+}
+
+#numero_page {
+	font-weight: bold;
+	margin: 12px;
+}
+
+body #numero_page {
+	margin-top:18px;
+}
+
+#lien_catalogue a h5:hover {
+	color:#DD6F1F;
+	text-decoration: underline;
+}
+
+/* DISPLAY -------------------------------------------------------------------------------------------------------- */
+
+
+#display_produit {
+	max-width: 680px;
+}
+
+#cadre_display {
+	border: #EEEEEE;
+	border-style: solid;
 }

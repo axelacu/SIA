@@ -2,7 +2,7 @@
 require 'header.php';
 ?>
     <main>
-        <section class="blanc">
+        <section class="blanc" id="signin">
             <div class="inscription">
                 <h1>Sign In</h1>
             </div>

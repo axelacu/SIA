@@ -2,7 +2,16 @@
     require 'header.php';
 ?>
 
+
+
 <main>
+
+    <style>
+        a{
+            text-decoration:none;
+        }
+    </style>
+
     <div id="catalogue">
         <?php
         include ('includes/catalogue.inc.php');
