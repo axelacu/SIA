@@ -15,7 +15,7 @@ $num_of_product_by_page=9;
 
 //On récupère les enregistrements de la base de données
 $req = "SELECT DISTINCT OFFRE.file_name, OFFRE.description, OFFRE.prix, OFFRE.label, OFFRE.type_offre
-        FROM OFFRE";
+        FROM OFFRE WHERE type_offre=0";
 $_GET['TEST']=1;
 $result = mysqli_query($conn,$req);
 $count = mysqli_num_rows($result);
