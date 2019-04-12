@@ -43,24 +43,24 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
                         <td style="width: 200px"> <div class="w3-cell" ">
                             <img src="./images_catalogue/' . $donnees[7] . '" style="width:60%">
                         </td>
-                        <td style="width: 600px"> 
+                        <td style="width: 600px"> <a style="text-decoration: underline; color: #3a768f; "> '.$donnees[4].':</br> </a>
                             '.$donnees[5].'
                             </br> </br></br>
                             <a style="color: #3a768f; float: left; " href="">Supprimer cette article</a>
                         </td>
                         <td style="text-align: center">'.$donnees[2].'</td>
                         <td style="text-align: center">'.$donnees[3].'</td>
-                        <td style="text-align: center">'.$donnees[6].'</td>
+                        <td style="text-align: center"><input type="number" name="qty" id="quantity" value=0 style="width: 50px"><br/></td>
                         <td style="text-align: center">'.$donnees[8].'€</td>
                     </tr>
         ';
-            $total+=$donnees[8];
+            $total+=$donnees[8]*$donnees[6];
 
         }
         echo '           
         </table>
         </div>
-        <div> <button class="button" style="color: #3a768f; float: left; ">Valider ma demande</button></div>
+        <div> <button class="button" style="color: white; width:200px; background: black; margin-top: 10px ;">Valider cette commande</button></div>
         </section>
         <div id="global" style="margin-left: auto; margin-right: auto ;width: 1200px; height: 300px;" >
         <section class ="blanc" id="demand" style="width: 75% ;display: inline-block;margin-top: 20px; float: left ; height: 100%" >
