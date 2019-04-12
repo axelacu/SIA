@@ -81,7 +81,7 @@ require 'header.php';
 
                 <div id="a_masquer">
                     <label for="quantity"><b>Quantity</b></label><br/>
-                    <input type="number" name="qty" id="quantity" value=0><br/>
+                    <input type="number" min="0" name="qty" id="quantity" value=0><br/>
                 </div>
 
                 <label for="picture">Fichier (tous formats | max. 1 Mo) :</label>
