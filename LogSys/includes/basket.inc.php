@@ -8,8 +8,6 @@
 
 require "dbh.inc.php";
 
-
-
 //on récupere les enregistrements qui n'ont pas encore été validé
 $req= "SELECT D.DATE_DEMANDE, D.REMARQUE, D.DATE_START, D.DATE_END, I.LABEL, I.DESCRIPTION, D.QUANTITE_DEMAND, I.FILE_NAME, I.PRIX FROM DEMAND D, OFFRE I WHERE D.ID_OFFRE=I.ID_OFFRE AND D.ID_USER=".$_SESSION['USER_ID'];
 $result = mysqli_query($conn,$req);
@@ -24,7 +22,7 @@ $total=0;
 if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
     if(mysqli_num_rows($result)) {
         echo '
-        <section class="blanc" id="demand" style="margin-bottom: 0px">
+        <section class="blanc" id="demand" style="margin-bottom: 0px ; width: 1200px ; max-width: 1200px;" >
             <div class="inscription">
                 <h1>My demands</h1>
             </div>
@@ -63,17 +61,22 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
         </table>
         </div>
         </section>
-        <div id="global" style="margin-left: auto; margin-right: auto ;width: 1200px" height:100%>
-        <section class ="blanc" id="demand" style="width: 75% ;display: inline-block;margin-top: 20px; float: left" >
+        <div id="global" style="margin-left: auto; margin-right: auto ;width: 1200px; height: 300px;" >
+        <section class ="blanc" id="demand" style="width: 75% ;display: inline-block;margin-top: 20px; float: left ; height: 100%" >
         <div class="inscription">
                 <h1 style="width: 100%;">vous pourriez aussi aimez </h1>
             </div>
         </section>
-        <section class ="blanc" id="demand" style="width: 23% ;display: inline-block; margin-top:20px; float: right ; height:300px"  >
-        <div class="inscription">
+        <section class ="blanc" id="demand" style="width: 23% ;display: inline-block; margin-top:20px; float: right ; height:100%"  >
+        <div class="inscription" style="display: block">
                 <h1>TOTAL </h1>
-            </div>
-        
+        </div>
+        <div style="display: block;width:100%">
+            <h3 style="float: right; ">'.$total.',00€</h3>
+        </div>
+        <div style="display: block">        
+            <h6 >-TVA (20%)</h6>
+        </div>
         </section>
         </div>
         ';
