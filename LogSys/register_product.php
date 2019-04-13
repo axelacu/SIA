@@ -41,6 +41,13 @@ require 'header.php';
             background: #f1f1f1;
         }
 
+        section {
+            width:50%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         textarea{
             width: 100%;
         }
@@ -81,7 +88,7 @@ require 'header.php';
 
                 <div id="a_masquer">
                     <label for="quantity"><b>Quantity</b></label><br/>
-                    <input type="number" min="0" name="qty" id="quantity" value=0><br/>
+                    <input type="number" min="0" name="qty" id="quantity" value=1><br/>
                 </div>
 
                 <label for="picture">Fichier (tous formats | max. 1 Mo) :</label>
