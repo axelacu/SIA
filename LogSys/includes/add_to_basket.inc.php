@@ -6,7 +6,22 @@
  * Time: 15:39
  */
 
+require 'dbh.inc.php';
 
+//bouton supprimer de mon panier
+if ($_GET['type']=='suppr') {
+
+    $id_demand = $_GET['id_demand'];
+
+    $sql ="DELETE from DEMAND WHERE ID_DEMAND='$id_demand'";
+    $conn->query($sql);
+
+    mysqli_close($conn);
+    header("Location:".$_SERVER["HTTP_REFERER"]."?suppr=".$_GET['id_demand']);
+    exit();
+}
+
+//bouton ajouter à mon panier
 if (isset($_POST['add_basket_submit'])) {
     session_start();
 
@@ -40,7 +55,6 @@ if (isset($_POST['add_basket_submit'])) {
 
 
     //SQL QUERIES
-    require 'dbh.inc.php';
 
     //------REQUETE DE RECHERCHE DE ID_PLACE
     $sql = "SELECT ID_PLACE FROM PLACE WHERE PLACE_NAME ='$location'";

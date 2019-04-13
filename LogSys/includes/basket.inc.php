@@ -9,7 +9,7 @@
 require "dbh.inc.php";
 
 //on récupere les enregistrements qui n'ont pas encore été validé
-$req= "SELECT D.DATE_DEMANDE, D.REMARQUE, D.DATE_START, D.DATE_END, I.LABEL, I.DESCRIPTION, D.QUANTITE_DEMAND, I.FILE_NAME, I.PRIX FROM DEMAND D, OFFRE I WHERE D.ID_OFFRE=I.ID_OFFRE AND D.ID_USER=".$_SESSION['USER_ID'];
+$req= "SELECT D.DATE_DEMANDE, D.REMARQUE, D.DATE_START, D.DATE_END, I.LABEL, I.DESCRIPTION, D.QUANTITE_DEMAND, I.FILE_NAME, I.PRIX, ID_DEMAND FROM DEMAND D, OFFRE I WHERE D.ID_OFFRE=I.ID_OFFRE AND D.ID_USER=".$_SESSION['USER_ID'];
 $result = mysqli_query($conn,$req);
 
 
@@ -46,7 +46,7 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
                         <td style="width: 600px"> <a style="text-decoration: underline; color: #3a768f; "> '.$donnees[4].':</br> </a>
                             '.$donnees[5].'
                             </br> </br></br>
-                            <a style="color: #3a768f; float: left; " href="">Supprimer cette article</a>
+                            <a style="color: #3a768f; float: left; " href="includes/add_to_basket.inc.php?type=suppr&id_demand='.$donnees[9].'">Supprimer cette article</a>
                         </td>
                         <td style="text-align: center">'.$donnees[2].'</td>
                         <td style="text-align: center">'.$donnees[3].'</td>
