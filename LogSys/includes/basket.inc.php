@@ -38,6 +38,7 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
                    </tr>
             ';
         while ($donnees = mysqli_fetch_row($result)) {
+
             echo '
                     <tr>
                         <td style="width: 200px"> <div class="w3-cell" ">
@@ -57,10 +58,15 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
             $total+=$donnees[8]*$donnees[6];
 
         }
+        $total_TVA=$total-($total*0.20);
         echo '           
         </table>
         </div>
-        <div> <button class="button" style="color: white; width:200px; background: black; margin-top: 10px ;">Valider cette commande</button></div>
+        <div> 
+        <form action="includes/addcomand.inc.php" method="post">
+            <button class="button" style="color: white; width:200px; background: black; margin-top: 10px ;">Valider cette commande</button>
+        </form>
+        </div>
         </section>
         <div id="global" style="margin-left: auto; margin-right: auto ;width: 1200px; height: 300px;" >
         <section class ="blanc" id="demand" style="width: 75% ;display: inline-block;margin-top: 20px; float: left ; height: 100%" >
@@ -68,15 +74,19 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
                 <h1 style="width: 100%;">vous pourriez aussi aimez </h1>
             </div>
         </section>
-        <section class ="blanc" id="demand" style="width: 23% ;display: inline-block; margin-top:20px; float: right ; height:100%"  >
+        <section class ="blanc" id="demand" style="width: 23% ;display: inline-block; margin-top:20px; float: right ; "  >
         <div class="inscription" style="display: block">
                 <h1>TOTAL </h1>
         </div>
-        <div style="display: block;width:100%">
+        <div style="display: inline-block;width:100%">
             <h3 style="float: right; ">'.$total.',00€</h3>
         </div>
-        <div style="display: block">        
-            <h6 >-TVA (20%)</h6>
+        <div style="display: inline-block;width: 100%; font-size:unset ">        
+            <a style="float:left 100%;">-TVA (20%)</a>
+            <a style="float: right">'.$total*0.20.'</a>
+        </div>
+        <div style="background:#3a768f ; color: white;padding: 10px; margin: 5px  "> 
+            <div style="text-align: center">'.$total_TVA.',00€**</div>
         </div>
         </section>
         </div>
