@@ -9,7 +9,7 @@
 require "dbh.inc.php";
 
 //on récupere les enregistrements qui n'ont pas encore été validé
-$req= "SELECT D.DATE_DEMANDE, D.REMARQUE, D.DATE_START, D.DATE_END, I.LABEL, I.DESCRIPTION, D.QUANTITE_DEMAND, I.FILE_NAME, I.PRIX, ID_DEMAND FROM DEMAND D, OFFRE I WHERE D.ID_OFFRE=I.ID_OFFRE AND D.ID_USER=".$_SESSION['USER_ID'];
+$req= "SELECT D.DATE_DEMANDE, D.REMARQUE, D.DATE_START, D.DATE_END, I.LABEL, I.DESCRIPTION, D.QUANTITE_DEMAND, I.FILE_NAME, I.PRIX, ID_DEMAND FROM DEMAND D, OFFRE I WHERE D.ACCEPTED=FALSE AND D.ID_OFFRE=I.ID_OFFRE AND D.ID_USER=".$_SESSION['USER_ID'];
 $result = mysqli_query($conn,$req);
 
 
@@ -19,7 +19,6 @@ echo '<meta name="viewport" content="width=device-width, initial-scale=1">
 
 $array_demands=array();
 $total=0;
-
 if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
     if(mysqli_num_rows($result)) {
         echo '
@@ -70,7 +69,6 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
                 </form>
             </div>
         </section>
-        
         <div id="global" style="margin-left: auto; margin-right: auto ;width: 1200px; height: 300px;" >
         
             <!--YOU COULD ALSO LIKE-->
