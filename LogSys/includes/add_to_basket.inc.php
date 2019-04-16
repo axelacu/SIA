@@ -8,7 +8,7 @@
 
 require 'dbh.inc.php';
 
-//bouton supprimer de mon panier
+//Bouton supprimer de mon panier
 if (isset($_GET['type'])) {
 
     $id_demand = $_GET['id_demand'];
@@ -21,15 +21,16 @@ if (isset($_GET['type'])) {
     exit();
 }
 
-//bouton ajouter à mon panier
+//Bouton ajouter à mon panier
 if (isset($_POST['add_basket_submit'])) {
     session_start();
 
     if (empty($_SESSION["USER_ID"]) || empty($_GET['id_offre']) || ($_GET['type_offre']==0 && empty($_POST['qty']))){
         header("Location:".$_SERVER["HTTP_REFERER"]."&error=emptyfields");
-        //header("Location: ../catalogue.php?error=emptyfields");
         exit();
     }
+
+    // MIS EN COMMENTAIRE : VALEUR NULL DANS LA BD SI NON RENSEIGNE PAR LE CLIENT
 
     if (empty($_POST['trip-start']))
         $date_start = date("Y-m-d");
@@ -42,7 +43,11 @@ if (isset($_POST['add_basket_submit'])) {
     else
         $date_end = $_POST['trip-end'];
 
-
+    //Vérifier que la date end n'est pas avant la date start
+    if ($date_end < $date_start) {
+        header("Location:".$_SERVER["HTTP_REFERER"]."&error=dates");
+        exit();
+    }
 
 
     $date_demande = date("Y-m-d");
@@ -77,7 +82,6 @@ if (isset($_POST['add_basket_submit'])) {
 
     if(!$query = $conn->prepare($sql)) {
         header("Location:".$_SERVER["HTTP_REFERER"]."&error=sqlerror");
-        //header("Location: ../catalogue.php?error=sqlerror");
         exit();
 
     }
@@ -95,6 +99,6 @@ if (isset($_POST['add_basket_submit'])) {
     mysqli_close($conn);
 
 }else{
-    header("Location: ../catalogue.php?");
+    header("Location: ../catalogue.php");
     exit();
 }
