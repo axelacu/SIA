@@ -54,6 +54,28 @@ session_start();
                                    </div>
                               </div>';
                     }else{
+                        $submenu = "";
+                        switch ($_SESSION['TYPE_USER']){
+                            case 'C': //for client.
+                                $submenu = '<a href="commands_client.php" class="w3-bar-item w3-button button">Commands</a>
+                                              <a href="demands.php" class="w3-bar-item w3-button button">Demands</a>';
+                                break;
+                            case 'M': //for commercial
+                                $submenu = '<a href="commands_pro.php" class="w3-bar-item w3-button button">Waiting Clients</a>
+                                              <a href="commands_currents.php" class="w3-bar-item w3-button button">Current Command</a>';
+                                break;
+                            case 'G':
+                            $submenu = '<a href="update_product.php" class="w3-bar-item w3-button button">Updates Products</a>
+                                              <a href="register_product.php" class="w3-bar-item w3-button button">Register Products</a>';
+                                break;
+                            case 'R':
+                                $submenu = '<a href="singup_employees.php" class="w3-bar-item w3-button button">Add Employees</a>
+                                            <a href="update_product.php" class="w3-bar-item w3-button button">Updates Products</a>
+                                              <a href="register_product.php" class="w3-bar-item w3-button button">Register Products</a>
+                                              <a href="commands_pro.php" class="w3-bar-item w3-button button">Waiting Clients</a>
+                                              <a href="commands_currents.php" class="w3-bar-item w3-button button">Current Command</a>';
+                        }
+
                         echo ' <!--<a href="basket.php" class="button">Basket</a> -->
                                 
                                 <div class="w3-container">
@@ -64,9 +86,7 @@ session_start();
                                           
                                           <div class="w3-bar-item" >
                                             <button onclick="my_Function1()" class="button" style="margin-top:0">My Account</button>
-                                            <div id="myaccount" class="w3-dropdown-content w3-bar-block" style="background:#1883ba; color: white;">
-                                              <a href="commands_client.php" class="w3-bar-item w3-button button">Commands</a>
-                                              <a href="demands.php" class="w3-bar-item w3-button button">Demands</a>
+                                            <div id="myaccount" class="w3-dropdown-content w3-bar-block" style="background:#1883ba; color: white;">'.$submenu.'
                                             </div>
                                           </div>
                                            
@@ -97,6 +117,11 @@ session_start();
                         <a href="catalogue.php" id="produit">Produits</a>
                         <a href="services.php" id="service" >Services</a>
                         <a href="#" id="assistance" >Assistance</a>
+                        <?php
+                            if(isset($_SESSION['USER_NAME'])){
+                                echo '<a href="#" id="mappmonde" >Mapmonde</a>';
+                            }
+                        ?>
                         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                             <i class="fa fa-bars"></i></a>
                     </ul>

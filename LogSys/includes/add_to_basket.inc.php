@@ -9,7 +9,7 @@
 require 'dbh.inc.php';
 
 //bouton supprimer de mon panier
-if ($_GET['type']=='suppr') {
+if (isset($_GET['type'])) {
 
     $id_demand = $_GET['id_demand'];
 
