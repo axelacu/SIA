@@ -64,13 +64,13 @@ if(!isset($_GET['page'])){
         die("ERROR PAGE".$_GET['page']);
     }
 }
-echo '<div class="w3-row-padding w3-margin-top">';
+echo '<div class="w3-row-padding w3-margin-top marge-catalogue">';
 
 for($i =($_GET['page']-1)*$num_of_product_by_page  ; $i<($num_of_product_by_page*$_GET['page']) && $i<sizeof($array_material_name);$i++){
     if(!($i==0 || $i%3!=0)) {
         echo '
          </div>
-         <div class="w3-row-padding w3-margin-top">';
+         <div class="w3-row-padding w3-margin-top marge-catalogue">';
     }
     echo '
     <div class="w3-third">

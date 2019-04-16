@@ -5,7 +5,7 @@
 require 'dbh.inc.php';
 
 $count = "";
-$req = ('SELECT DISTINCT OFFRE.file_name, OFFRE.description, OFFRE.prix, OFFRE.label, OFFRE.type_offre  FROM OFFRE WHERE label ORDER BY label ASC');
+$req = ('SELECT DISTINCT OFFRE.file_name, OFFRE.description, OFFRE.prix, OFFRE.label, OFFRE.type_offre, OFFRE.id_offre  FROM OFFRE WHERE label ORDER BY label ASC');
 $dir = 'images_catalogue';
 $num_of_product_by_page=10000;
 
@@ -13,7 +13,7 @@ $num_of_product_by_page=10000;
 
         $q = htmlspecialchars($_GET['q']);
 
-        $req = ('SELECT DISTINCT OFFRE.file_name, OFFRE.description, OFFRE.prix, OFFRE.label, OFFRE.type_offre  FROM OFFRE WHERE label LIKE "%'.$q.'%" ORDER BY label ASC');
+        $req = ('SELECT DISTINCT OFFRE.file_name, OFFRE.description, OFFRE.prix, OFFRE.label, OFFRE.type_offre, OFFRE.id_offre  FROM OFFRE WHERE label LIKE "%'.$q.'%" ORDER BY label ASC');
     }
 
 $articles = mysqli_query($conn,$req);
@@ -65,13 +65,13 @@ if(!isset($_GET['page'])){
         die("ERROR PAGE".$_GET['page']);
     }
 }
-echo '<div class="w3-row-padding w3-margin-top">';
+echo '<div class="w3-row-padding w3-margin-top marge-catalogue">';
 
 for($i =($_GET['page']-1)*$num_of_product_by_page  ; $i<($num_of_product_by_page*$_GET['page']) && $i<sizeof($array_material_name);$i++){
     if(!($i==0 || $i%3!=0)) {
         echo '
          </div>
-         <div class="w3-row-padding w3-margin-top">';
+         <div class="w3-row-padding w3-margin-top marge-catalogue">';
     }
     echo '
     <div class="w3-third">

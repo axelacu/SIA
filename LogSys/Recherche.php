@@ -3,6 +3,13 @@
 ?>
 
 <main>
+
+    <style>
+        a{
+            text-decoration:none;
+        }
+    </style>
+
     <div>
         <?php
         include ('includes/recherche.inc.php');
