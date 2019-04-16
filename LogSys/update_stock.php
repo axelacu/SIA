@@ -25,7 +25,7 @@ require 'includes/dbh.inc.php';
                             <th><label> <b>Reference</b></label></th>
                             <th><label> <b>Article</b></label></th>
                             <th style="text-align: center"><label> <b>Label</b></label></th>
-                            <th style="text-align: center"><label> <b>En stock</b></label></th>
+                            <th style="text-align: center"><label> <b>In stock</b></label></th>
                             <th style="width: 10%"><label> <b></b></label></th>
                         </tr>
 

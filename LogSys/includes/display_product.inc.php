@@ -8,13 +8,10 @@
 
 require 'dbh.inc.php';
 
-// $id_user = $_SESSION['USER_ID'];
-?>
-
-<?php
-
 if (isset($_GET['label']) && isset($_GET['type_offre']) && isset($_GET['file_name']) && isset($_GET['description']) && isset($_GET['prix'])) {
     $attributes = array($_GET['label'], $_GET['type_offre'], $_GET['file_name'], $_GET['description'], $_GET['prix'], $_GET['id_offre']);
+
+    $current_date = date("Y-m-d");
 
 
     echo '
@@ -89,6 +86,6 @@ if (isset($_GET['label']) && isset($_GET['type_offre']) && isset($_GET['file_nam
 }
 
 else {
-    header("Location: ../catalogue.php?");
+    header("Location: ../catalogue.php");
     exit();
 }
