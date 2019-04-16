@@ -25,7 +25,7 @@
 
                         <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
-                        <div class="clearfix">
+                        <div style="padding-top: 15px" class="clearfix">
                             <button type="button" class="cancelbtn">Cancel</button>
                             <button type="submit" name="signup-submit" class="signupbtn">Sign Up</button>
                         </div>

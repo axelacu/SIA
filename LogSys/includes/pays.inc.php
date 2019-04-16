@@ -1,4 +1,4 @@
-<select name="pays">
+<select style="width: 100%" name="pays" id="pays">
     <option value="France" selected="selected">France </option>
     <option value="Afghanistan">Afghanistan </option>
     <option value="Afrique_Centrale">Afrique_Centrale </option>
