@@ -9,7 +9,7 @@
 require "dbh.inc.php";
 
 //on récupere les enregistrements qui n'ont pas encore été validé
-$req= "SELECT D.DATE_DEMANDE, D.REMARQUE, D.DATE_START, D.DATE_END, I.LABEL, I.DESCRIPTION, D.QUANTITE_DEMAND, I.FILE_NAME, I.PRIX, ID_DEMAND FROM DEMAND D, OFFRE I WHERE D.ID_OFFRE=I.ID_OFFRE AND D.ID_USER=".$_SESSION['USER_ID'];
+$req= "SELECT D.DATE_DEMANDE, D.REMARQUE, D.DATE_START, D.DATE_END, I.LABEL, I.DESCRIPTION, D.QUANTITE_DEMAND, I.FILE_NAME, I.PRIX, ID_DEMAND FROM DEMAND D, OFFRE I WHERE D.ACCEPTED=FALSE AND D.ID_OFFRE=I.ID_OFFRE AND D.ID_USER=".$_SESSION['USER_ID'];
 $result = mysqli_query($conn,$req);
 
 
@@ -64,7 +64,7 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
         </div>
         <div> 
         <form action="includes/addcomand.inc.php" method="post">
-            <button class="button" style="color: white; width:200px; background: black; margin-top: 10px ;">Valider cette commande</button>
+            <button class="button" style="color: white; width:200px; background: black; margin-top: 10px ;">Valider la cette commande</button>
         </form>
         </div>
         </section>
