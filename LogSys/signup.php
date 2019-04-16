@@ -2,14 +2,14 @@
 	require 'header.php';
 ?>
 	<main>
-        <section class="blanc">
+        <section class="blanc" id="signin">
             <div class="inscription">
                 <h1>Sign Up</h1>
             </div>
             <p id="texte2">Please fill in this form to create an account.</p>
 
                 <form action="includes/signup.inc.php" method="post">
-                    <div id="signup">
+                    <div class="signup_in">
 
                         <label for="username"><b>Username</b></label>
                         <input type="text" name="uid" placeholder="Username">

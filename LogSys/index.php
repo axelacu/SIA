@@ -35,7 +35,7 @@
 
 
 
-        <div class="container" style="margin-bottom: 30px;">
+        <div class="container" style="margin-bottom: 30px">
             <h2>Bienvenue !</h2>
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->

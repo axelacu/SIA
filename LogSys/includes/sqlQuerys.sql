@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS INTERVENTION, EQUIPE, COMMAND ,DEMAND, EMPLOYEE, OFFRE , USERS , PLACE;
+--DROP TABLE IF EXISTS INTERVENTION, EQUIPE, COMMAND ,DEMAND, EMPLOYEE, OFFRE , PLACE;
 
 
 
@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS PLACE(
   LONGITUDE INT(11) UNIQUE,
   ALTITUDE INT(11),
   PLACE_NAME VARCHAR(26) NOT NULL,
-  REMARQUE LONGTEXT NOT NULL
+  REMARQUE LONGTEXT
 );
 
 CREATE TABLE IF NOT EXISTS USERS(
@@ -18,6 +18,8 @@ CREATE TABLE IF NOT EXISTS USERS(
 	USER_PASSWORD LONGTEXT NOT NULL,
 	ADDRESS VARCHAR(20)
 );
+
+
 
 CREATE TABLE IF NOT EXISTS OFFRE(
   ID_OFFRE INT(11) AUTO_INCREMENT PRIMARY KEY UNIQUE,
@@ -52,24 +54,27 @@ CREATE TABLE IF NOT EXISTS DEMAND (
   DATE_START DATE,
   DATE_END DATE,
   ACCEPTED BOOLEAN,
+  ID_PLACE INT(11),
+  QUANTITE_DEMAND INT(11),
   FOREIGN KEY(ID_OFFRE) REFERENCES OFFRE(ID_OFFRE) ON DELETE CASCADE ,
+  FOREIGN KEY(ID_PLACE) REFERENCES PLACE(ID_PLACE) ON DELETE CASCADE,
+
   FOREIGN KEY(ID_USER) REFERENCES USERS(ID_USER) ON DELETE CASCADE
 );
 
+
+
 CREATE TABLE IF NOT EXISTS COMMAND(
   ID_COMMAND INT(11) AUTO_INCREMENT PRIMARY KEY NOT NULL UNIQUE,
+  ID_DEMAND INT(11),
   DATE_COMMAND DATE,
-  REMARQUE LONGTEXT,
-  ID_USER INT(11),
-  ID_OFFRE INT(11),
+  DATE_VALIDATION DATE,
   DATE_START DATE,
   DATE_END DATE,
-  ID_EMPLOYEE INT(11),
-  ID_PLACE INT(11),
-  FOREIGN KEY(ID_OFFRE) REFERENCES OFFRE(ID_OFFRE) ON DELETE CASCADE,
-  FOREIGN KEY(ID_USER) REFERENCES USERS(ID_USER) ON DELETE CASCADE,
-  FOREIGN KEY(ID_PLACE) REFERENCES PLACE(ID_PLACE) ON DELETE CASCADE,
-  FOREIGN KEY(ID_EMPLOYEE) REFERENCES EMPLOYEE(ID_EMPLOYEE) ON DELETE CASCADE
+  VALIDATE_COMMAND INT(11) DEFAULT NULL,
+  PAYMENT INT(11) DEFAULT NULL,
+  FOREIGN KEY(ID_DEMAND) REFERENCES DEMAND(ID_DEMAND) ON DELETE CASCADE
+
 
 );
 
@@ -94,18 +99,26 @@ CREATE TABLE IF NOT EXISTS INTERVENTION(
 );
 
 
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Bi-bouteille', 'bloc_bi_bouteilles.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '70');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Robinetterie', 'robinetterie.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '30');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Détendeur', 'détendeur.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '30');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Gilet stabilisateur', 'stab-solid.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '60');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Chronomètre', 'chronomètre.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '15');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Profondimètre', 'profondimètre.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '15');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Couteau', 'couteau.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '10');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Jeu de tables de plongée immergeable', 'table-de-plongée.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '20');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Masque à verres correcteurs', 'masque-de-plongee-avec-verres-correcteurs-pro.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '30');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Compresseur', 'compresseur.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '50');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Trousse d\’urgence', 'trousse-de-secours-plongee.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '20');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Bi-bouteille', 'bloc_bi_bouteilles.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '70');
 
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, PRIX) VALUES ('Installation de matériel', 'equipement_plongee.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',1,'100');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, PRIX) VALUES('Maintenance de matériel', 'photo-materiel.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',1,'100');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, PRIX) VALUES ('Support de surface', 'photo-equipement.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',1,'100');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Robinetterie', 'robinetterie.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '30');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Détendeur', 'détendeur.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '30');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Gilet stabilisateur', 'stab-solid.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '60');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Chronomètre', 'chronomètre.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '15');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Profondimètre', 'profondimètre.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '15');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Couteau', 'couteau.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '10');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Jeu de tables de plongée immergeable', 'table-de-plongée.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '20');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Masque à verres correcteurs', 'masque-de-plongee-avec-verres-correcteurs-pro.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '30');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Compresseur', 'compresseur.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '50');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Trousse d\’urgence', 'trousse-de-secours-plongee.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '20');
+
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, PRIX) VALUES ('Installation de matériel', 'equipement_plongee.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',1,'100');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, PRIX) VALUES('Maintenance de matériel', 'photo-materiel.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',1,'100');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, PRIX) VALUES ('Support de surface', 'photo-equipement.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',1,'100');
+
+
+--INSERT IGNORE INTO DEMAND(DATE_DEMANDE, REMARQUE, ID_USER, ID_OFFRE, DATE_START, DATE_END, ACCEPTED,QUANTITE_DEMAND )  VALUES(CURRENT_DATE ,'Mes voeux', 1,1,CURRENT_DATE ,CURRENT_DATE ,FALSE ,1);
+
+--INSERT IGNORE INTO PLACE(LATITUDE, LONGITUDE, ALTITUDE, PLACE_NAME) VALUES (30,30,40,'France');
+--INSERT IGNORE INTO PLACE(LATITUDE, LONGITUDE, ALTITUDE, PLACE_NAME) VALUES (31,31,40,'Japon')
+
