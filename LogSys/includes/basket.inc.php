@@ -9,7 +9,7 @@
 require "dbh.inc.php";
 
 //on récupere les enregistrements qui n'ont pas encore été validé
-$req= "SELECT D.DATE_DEMANDE, D.REMARQUE, D.DATE_START, D.DATE_END, I.LABEL, I.DESCRIPTION, D.QUANTITE_DEMAND, I.FILE_NAME, I.PRIX, ID_DEMAND FROM DEMAND D, OFFRE I WHERE D.ACCEPTED=FALSE AND D.ID_OFFRE=I.ID_OFFRE AND D.ID_USER=".$_SESSION['USER_ID'];
+$req= "SELECT D.DATE_DEMANDE, D.REMARQUE, D.DATE_START, D.DATE_END, I.LABEL, I.DESCRIPTION, D.QUANTITE_DEMAND, I.FILE_NAME, I.PRIX, ID_DEMAND, I.ID_OFFRE, I.TYPE_OFFRE FROM DEMAND D, OFFRE I WHERE D.ACCEPTED=FALSE AND D.ID_OFFRE=I.ID_OFFRE AND D.ID_USER=".$_SESSION['USER_ID'];
 $result = mysqli_query($conn,$req);
 
 
@@ -19,6 +19,7 @@ echo '<meta name="viewport" content="width=device-width, initial-scale=1">
 
 $array_demands=array();
 $total=0;
+
 if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
     if(mysqli_num_rows($result)) {
         echo '
@@ -41,18 +42,41 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
 
             echo '
                     <tr>
-                        <td style="width: 200px"> <div class="w3-cell" ">
-                            <img src="./images_catalogue/' . $donnees[7] . '" style="width:60%">
+                        <td style="width: 200px"> <div class="w3-cell" ">';
+
+                        if ($donnees[11]==0){
+                            $dir = "images_catalogue/";
+                        }
+                        else
+                            $dir = "images_services/";
+
+
+                        echo '
+                            <img src="'. $dir . $donnees[7] . '" style="width:60%">
                         </td>
-                        <td style="width: 600px"> <a style="text-decoration: underline; color: #3a768f; "> '.$donnees[4].':</br> </a>
+                        <td style="width: 600px"> <a style="text-decoration: underline; color: #3a768f;" href="display_product.php?label=' . $donnees[4] .'&type_offre='.$donnees[11].'&file_name='.$donnees[7].'&description='.$donnees[5].'&prix='.$donnees[8].'&id_offre='.$donnees[10].'" 
+                            target="_blank"> '.$donnees[4].':</br> </a>
                             '.$donnees[5].'
                             </br> </br></br>
                             <a style="color: #3a768f; float: left; " href="includes/add_to_basket.inc.php?type=suppr&id_demand='.$donnees[9].'">Delete the article</a>
                         </td>
                         <td style="text-align: center">'.$donnees[2].'</td>
-                        <td style="text-align: center">'.$donnees[3].'</td>
-                        <td style="text-align: center"><input type="number" name="qty" id="quantity" value=0 style="width: 50px"><br/></td>
-                        <td style="text-align: center">'.$donnees[8].'€</td>
+                        <td style="text-align: center">'.$donnees[3].'</td>';
+
+                        // Affiche la quantité pour un produit mais pas pour un service
+                        if ($donnees[11]==0){
+                            echo'
+                                <td style="text-align: center; padding-top: 10px;">'. $donnees[6] .'</td>
+                                <!--<td style="text-align: center">
+                                    <input type="number" name="qty" id="quantity" min="0" value='. $donnees[6] .' style="width: 55px; height: 30px;"><br/>
+                                </td>-->
+                                ';
+                        }
+                        else {
+                            echo'<td style="text-align: center"></td>';
+                        }
+        echo'
+                        <td style="text-align: center">'.$donnees[8]*$donnees[6].'€</td>
                     </tr>
         ';
             $total+=$donnees[8]*$donnees[6];

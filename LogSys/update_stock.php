@@ -48,13 +48,13 @@ require 'includes/dbh.inc.php';
                                         </td>
                                         <td style="text-align: center">' . $donnees[2] . '</td>
                                         <td style="text-align: center">' . $donnees[3] . '</td>
-                                        <td style="text-align: right; margin: 10px 10px; ">
-                                            
-                                            <form action="includes/update_stock.inc.php" method="post" enctype="multipart/form-data" style="display: flex">
+                                        <td style="text-align: right;  ">
+                                        
+                                            <form action="includes/update_stock.inc.php" method="post" enctype="multipart/form-data" style="display: flex;">
                                                 <input name="qty" id="quantity" value=0 style="flex: 1; padding: 20px; " type="number" min="-200" max="200" step="5">
                                                 <button type="submit" class="button" formaction="includes/update_stock.inc.php?update=true&id=' . $donnees[0] .'" style="flex: 2;color: white; background: black ">Update stock</button>
                                             </form>
-                                                
+                                            
                                         </td>
                                     </tr>
                             ';
