@@ -23,6 +23,8 @@ $total=0;
 if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
     if(mysqli_num_rows($result)) {
         echo '
+        
+        
         <section class="blanc" id="demand" style="margin-bottom: 0px ; width: 1200px ; max-width: 1200px;" >
             <div class="inscription">
                 <h1>My demands</h1>
