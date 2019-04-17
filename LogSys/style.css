@@ -54,6 +54,10 @@ label, p {
 	font-size: .875rem;
 }
 
+li{
+	list-style-position: outside;
+
+}
 main {
 
 }
@@ -839,4 +843,58 @@ textarea {
 
 .info_taille{
     width: 30%;
+}
+
+/* Conditions et mentions légale --------------------------------------------------------------------------------------- */
+
+.paragraphe_titre{
+	font-size: 20px;
+	font-weight: lighter;
+	font-family: Helvetica;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.textecdu {
+	margin-bottom: 20px;
+	font-size: 11px;
+}
+
+.listecdu{
+	font-size: 11px;
+}
+
+/* CONTACTEZ NOUS ------------------------------------------------------------------------------------------------------ */
+select {
+	width: 100%;
+	padding: 15px;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+}
+
+#pays {
+	margin: 5px 0 22px 0;
+}
+
+#remarque_contact {
+	width: 100%;
+	padding: 15px;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+	margin: 5px 0 22px 0;
+}
+
+input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+input[type=submit] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	cursor: pointer;
+
 }
