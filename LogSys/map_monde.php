@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="style_mapmonde.css">
 
     <main>
-
             <!-- filtering of crops -->
             <nav class='menu-ui'>
                 <a href='#' class='activenew' data-filter='all'>Voir tout</a>
