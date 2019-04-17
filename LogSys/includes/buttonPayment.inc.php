@@ -6,8 +6,6 @@
  * Time: 02:25
  */
 
-session_start();
-
 require 'dbh.inc.php';
 $req='SELECT * FROM COMMAND C, DEMAND D WHERE D.ID_USER='.$_SESSION['USER_ID'].' AND C.VALIDATE_COMMAND = 1 AND C.PAYMENT = 0 AND D.ID_DEMAND = C.ID_DEMAND;';
 $result = mysqli_query($conn,$req);
