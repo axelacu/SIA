@@ -17,7 +17,7 @@ if(isset($_GET['submit-command'])){
         $stmt = mysqli_stmt_init($conn);
 
         $sql = 'UPDATE COMMAND
-                SET VALIDATE_COMMAND = ?
+                SET VALIDATE_COMMAND = ?, DATE_COMMAND = CURRENT_DATE 
                 WHERE ID_COMMAND = ?';
 
         if(!mysqli_stmt_prepare($stmt,$sql)){
