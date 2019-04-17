@@ -81,7 +81,7 @@ if (isset($_GET['label']) && isset($_GET['type_offre']) && isset($_GET['file_nam
                     <label for="start" id="start"><b>End date:</b></label>
                     <input style="width: 100%" type="date" id="start" name="trip-start" value="<?php echo date();?>" min="2019-01-01" max="2020-12-31">
         
-                    <textarea style="width: 100%" name="rem"  id="remarque" placeholder="Remarque"></textarea>
+                    <textarea style="width: 100%" name="rmq"  id="remarque" placeholder="Remarque"></textarea>
                 </div>
                     <div id="addbasket">
                         <button style="margin-top: 0; margin-bottom: 0" type="submit" name="add_basket_submit" class="w3-button w3-green">Add to basket <i class="fa fa-shopping-cart"></i></button>

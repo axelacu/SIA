@@ -62,9 +62,9 @@
                     <a style="color:white">SERVICE CLIENT</a>
                     <ul style="padding-top: 20px;padding-right: 10px;">
                         <li style="list-style-type: none;">
-                            <a style="color: #CECECE;font-size: 12px;">Suivi de commande</a></br>
-                            <a style="color: #CECECE;font-size: 12px;">Livraison</a></br>
-                            <a style="color: #CECECE;font-size: 12px;">Contactez-nous</a></br>
+                            <a href="commands_client.php.php" style="color: #CECECE;font-size: 12px;">Mes commandes</a></br>
+                            <a href="demands.php" style="color: #CECECE;font-size: 12px;">Mes demandes</a></br>
+                            <a href="contact.php" style="color: #CECECE;font-size: 12px;">Contactez-nous</a></br>
                         </li>
                     </ul>
                 </li>
@@ -75,10 +75,9 @@
                     <a style="color:white">INFORMATIONS</a>
                     <ul style="padding-top: 20px;padding-right: 10px;">
                         <li style="list-style-type: none;">
-                            <a style="color: #CECECE;font-size: 12px;">Conditions générales d'utilisation</a></br>
-                            <a style="color: #CECECE;font-size: 12px;">Conditions générales de vente</a></br>
+                            <a href="mentions_legales.php" style="color: #CECECE;font-size: 12px;">Mentions Légales</a></br>
+                            <a href="cdu.php" style="color: #CECECE;font-size: 12px;">Conditions générales d'utilisation</a></br>
                             <a style="color: #CECECE;font-size: 12px;">Politique de protection des données personnelles</a></br>
-                            <a style="color: #CECECE;font-size: 12px;">Gestion des cookies</a></br>
                         </li>
                     </ul>
                 </li>
