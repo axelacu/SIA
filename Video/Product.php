@@ -10,6 +10,7 @@ class Product
 {
     private $name;
     private $price;
+    private $quantity;
 
 
     public function getName(){
@@ -28,6 +29,16 @@ class Product
 
     public function setPrice($price){
         $this->price=$price;
+    }
+
+
+    public function getQuantity() {
+        return $this->quantity;
+    }
+
+
+    public function setQuantity($quantity) {
+        $this->quantity = $quantity;
     }
 
 

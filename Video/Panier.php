@@ -27,7 +27,7 @@ class Panier
 
     public function getPrice(): float { return array_reduce($this->getProducts(),
         function ($total,Product $product){
-            return $product->getprice()+$total;
+            return $product->getprice()*$product->getQuantity()+$total;
         },0);
 
     }
@@ -56,5 +56,6 @@ class Panier
 
         return $return;
     }
+
 
 }
