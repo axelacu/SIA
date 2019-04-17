@@ -65,7 +65,7 @@ session_start();
                                               <a href="commands_currents.php" class="w3-bar-item w3-button button">Current Command</a>';
                                 break;
                             case 'G':
-                            $submenu = '<a href="update_product.php" class="w3-bar-item w3-button button">Updates Products</a>
+                                $submenu = '<a href="update_product.php" class="w3-bar-item w3-button button">Updates Products</a>
                                               <a href="register_product.php" class="w3-bar-item w3-button button">Register Products</a>';
                                 break;
                             case 'R':
@@ -118,9 +118,9 @@ session_start();
                         <a href="services.php" id="service" >Services</a>
                         <a href="#" id="assistance" >Assistance</a>
                         <?php
-                            if(isset($_SESSION['USER_NAME'])){
-                                echo '<a href="#" id="mappmonde" >Mapmonde</a>';
-                            }
+                        if(isset($_SESSION['USER_NAME'])){
+                            echo '<a href="#" id="mappmonde" >Mapmonde</a>';
+                        }
                         ?>
                         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                             <i class="fa fa-bars"></i></a>

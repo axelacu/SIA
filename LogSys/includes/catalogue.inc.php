@@ -102,8 +102,8 @@ echo '</div>';
 
 $back_page = (($_GET['page']-1)>0? ($_GET['page']-1):($_GET['page']));
 $forward_page = (($_GET['page']+1)<=$_GET['nb_page']? ($_GET['page']+1):($_GET['page']));
-echo ' <div class="w3-center w3-padding-32">
-            <div class="w3-panel w3-highway-blue" id="barre_pagination">
+echo ' <div style="padding-top: 16px;" class="w3-center">
+            <div style="margin-top: 16px" class=" w3-highway-blue" id="barre_pagination">
                 <div id="numero_page" class="w3-bar">
                     <a href="catalogue.php?page='.$back_page.'&nb_page='.$_GET['nb_page'].'" class="w3-bar-item w3-button w3-hover-black">«</a>';
 
