@@ -16,6 +16,7 @@ require 'dbh.inc.php';
 if (isset($_GET['label']) && isset($_GET['type_offre']) && isset($_GET['file_name']) && isset($_GET['description']) && isset($_GET['prix'])) {
     $attributes = array($_GET['label'], $_GET['type_offre'], $_GET['file_name'], $_GET['description'], $_GET['prix'], $_GET['id_offre']);
 
+    $current_date = date("Y-m-d");
 
     echo '
         
@@ -75,11 +76,11 @@ if (isset($_GET['label']) && isset($_GET['type_offre']) && isset($_GET['file_nam
                     <label for="start" id="start"><b>Localisation :</b></label>';
                     include('pays.inc.php');
     echo '
-                    <label  for="start" id="start"><b>Start date:</b></label>
-                    <input  style="width: 100%" type="date" id="start" name="trip-start" value="<?php echo date();?>" min="2019-01-01" max="2020-12-31">
+                    <label for="start" id="start"><b>Start date:</b></label>
+                    <input style="width: 100%" type="date" id="date" name="trip-start" value="'.$current_date.'" min="'.$current_date.'" max="2020-12-31">
         
                     <label for="start" id="start"><b>End date:</b></label>
-                    <input style="width: 100%" type="date" id="start" name="trip-start" value="<?php echo date();?>" min="2019-01-01" max="2020-12-31">
+                    <input style="width: 100%" type="date" type="date" id="date" name="trip-end" value="'.$current_date.'" min="'.$current_date.'" max="2020-12-31">
         
                     <textarea style="width: 100%" name="rmq"  id="remarque" placeholder="Remarque"></textarea>
                 </div>

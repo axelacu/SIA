@@ -116,7 +116,7 @@ session_start();
                         <a href="index.php" class="active" id="acceuil" >Accueil</a>
                         <a href="catalogue.php" id="produit">Produits</a>
                         <a href="services.php" id="service" >Services</a>
-                        <a href="#" id="assistance" >Assistance</a>
+                        <a href="contact.php" id="assistance" >Assistance</a>
                         <?php
                         if(isset($_SESSION['USER_NAME'])){
                             echo '<a href="#" id="mappmonde" >Mapmonde</a>';
