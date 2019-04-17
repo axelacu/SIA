@@ -36,9 +36,9 @@
 
                     <label for="radio"> <b> USER TYPE </b> </label>
                     <br>
-                    <input type="radio" name="status" value="C" id=""> Commercial <br>
-                    <input type="radio" name="status" value="M" id="serv"> Material manager <br>
-                    <input type="radio" name="status" value="R" id="serv"> Admin <br>
+                    <input type="radio" name="status" value="M"> Commercial <br>
+                    <input type="radio" name="status" value="G"> Material manager <br>
+                    <input type="radio" name="status" value="R"> Admin <br>
                     <br>
                     <label for="email"><b>Email</b></label>
                     <input type="text" name="mail" placeholder="E-mail">
