@@ -8,9 +8,10 @@
 require 'vendor/autoload.php';
 require 'Product.php';
 require 'Panier.php';
+session_start();
 
 $ids= require('paypal.php');
-$basket = Panier::fake();
+$basket = $_SESSION['basketPaypal'];
 
 $apiContext = new \PayPal\Rest\ApiContext(
     new \PayPal\Auth\OAuthTokenCredential(
@@ -27,7 +28,7 @@ foreach ($basket->getProducts() as $product){
     $item->setName($product->getName());
     $item->setPrice($product->getPrice());
     $item->setCurrency('EUR');
-    $item->setQuantity(1);
+    $item->setQuantity($product->getQuantity());
     $list->addItem($item);
 }
 
@@ -46,7 +47,7 @@ $transaction->setCustom('demo1');
 $payment = new \PayPal\Api\Payment();
 $payment->setIntent('sale');
 $redirectUrls=new \PayPal\Api\RedirectUrls();
-$redirectUrls->setReturnUrl('http://localhost:8888/AIRBLIO/SIA/Video/pay.php');
+$redirectUrls->setReturnUrl('http://localhost:8888/SIA/Video/pay.php');
 $redirectUrls->setCancelUrl('http://localhost:8888/index.php');
 $payment->setRedirectUrls($redirectUrls);
 

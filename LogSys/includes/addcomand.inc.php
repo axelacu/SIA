@@ -33,7 +33,7 @@ if(!$resultOne){
 
 while ($donnees = mysqli_fetch_row($resultTwo)) {
     $reqThree=null;
-    $reqThree="INSERT INTO COMMAND(ID_DEMAND, DATE_COMMAND, DATE_START,DATE_END) VALUES(".$donnees[0].",'".date("Y-m-d")."','".$donnees[2]."','".$donnees[3]."');";
+    $reqThree="INSERT INTO COMMAND(ID_DEMAND, DATE_COMMAND, DATE_START,DATE_END,PAYMENT,VALIDATE_COMMAND) VALUES(".$donnees[0].",'".date("Y-m-d")."','".$donnees[2]."','".$donnees[3]."',0,0);";
     $resultThree = mysqli_query($conn,$reqThree);
     if(!$resultThree){
         header("Location:".$_SERVER["HTTP_REFERER"]."&error=sqlerror");
