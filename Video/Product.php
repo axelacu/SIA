@@ -28,9 +28,8 @@ class Product
 
 
     public function setPrice($price){
-        $this->price=$price;
+        $this->price=$price*$this->quantity;
     }
-
 
     public function getQuantity() {
         return $this->quantity;

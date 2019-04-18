@@ -31,7 +31,7 @@ class PDF extends FPDF
         $this->Text(10,45,' 01.42.40.68.68');
         $this->Text(10,50,' ServiceClientele@airblio.com');
 
-        $this->Text(140,60,' Olivier Gely');
+        $this->Text(140,60,' Shirel Matti ');
         $this->Text(140,65,' 36 rue de la liberte');
         $this->Text(140,70,' 75019 Paris');
         $this->Text(140,75,' 01.42.40.68.68');
