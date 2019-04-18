@@ -11,9 +11,19 @@
         <section class="blanc" id="signin">
             <div class="inscription">
                 <h1>Sign Up</h1>
+
             </div>
             <p id="texte2">Please fill in this form to create an account.</p>
 
+            <?php
+                if(isset($_GET['error'])){
+                    echo '<p style="color: red; font-size: medium; text-align: center"> Error on registration, please try again </p>';
+                }
+
+                if(isset($_GET['signup'])){
+                    echo '<p style="color: green; font-size: medium; text-align: center"> Congratulation for your registration </p>';
+                }
+            ?>
             <form action="includes/register_employees.inc.php" method="post">
                 <div class="signup_in">
 
@@ -21,17 +31,20 @@
                     <input type="text" name="uid" placeholder="Username">
 
 
-                    <label for="lastname"><b>Email</b></label>
+                    <label for="lastname"><b>Last name</b></label>
                     <input type="text" name="lastname" placeholder="Last Name">
 
                     <label for="radio"> <b> USER TYPE </b> </label>
                     <br>
-                    <input type="radio" name="status" value="C" id=""> Commercial <br>
-                    <input type="radio" name="status" value="M" id="serv"> Material manager <br>
-                    <input type="radio" name="status" value="R" id="serv"> Admin <br>
+                    <input type="radio" name="status" value="M"> Commercial <br>
+                    <input type="radio" name="status" value="G"> Material manager <br>
+                    <input type="radio" name="status" value="R"> Admin <br>
                     <br>
                     <label for="email"><b>Email</b></label>
                     <input type="text" name="mail" placeholder="E-mail">
+
+                    <label for="social"><b>Social Security</b></label>
+                    <input type="text" name="social" placeholder="Social number">
 
                     <label for="psw"><b>Password</b></label>
                     <input type="password" name="pwd" placeholder="Password">

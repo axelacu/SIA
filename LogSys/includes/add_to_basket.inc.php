@@ -8,6 +8,7 @@
 
 require 'dbh.inc.php';
 
+
 //Bouton supprimer de mon panier
 if (isset($_GET['type'])) {
 

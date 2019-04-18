@@ -18,6 +18,13 @@ if (isset($_GET['label']) && isset($_GET['type_offre']) && isset($_GET['file_nam
 
     $current_date = date("Y-m-d");
 
+    if ($attributes[1] == 0)
+        $dir = 'images_catalogue';
+    else
+        $dir = 'images_services';
+
+    $image = $dir . "/" . $attributes[2];
+
     echo '
         
         <style>
@@ -49,7 +56,7 @@ if (isset($_GET['label']) && isset($_GET['type_offre']) && isset($_GET['file_nam
 
     echo '    
                 <div id="bloc1" xmlns="http://www.w3.org/1999/html">
-                    <img style="width: 30%;height: 30%;margin: 0 auto;" class="w3-border" src="' . $attributes[2] . '" alt="' . $attributes[2] . '" style="width:70%">
+                    <img style="width: 30%;height: 30%;margin: 0 auto;" class="w3-border" src="'. $image . '" alt="' . $image . '" style="width:70%">
                     <h5 style="font-weight: bold;font-size: 1em;text-align: center; margin: 0 auto; width: 100%; padding-top: 10px; padding-bottom: 10px">Prix unitaire : ' . $attributes[4] . '€' . '</h5>
                     
                 
@@ -93,6 +100,6 @@ if (isset($_GET['label']) && isset($_GET['type_offre']) && isset($_GET['file_nam
 }
 
 else {
-    header("Location: ../catalogue.php?");
+    header("Location: ../catalogue.php");
     exit();
 }

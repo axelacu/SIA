@@ -1,4 +1,4 @@
---DROP TABLE IF EXISTS INTERVENTION, EQUIPE, COMMAND ,DEMAND, EMPLOYEE, OFFRE , PLACE;
+--DROP TABLE IF EXISTS DEVIS, INTERVENTION, EQUIPE, COMMAND ,DEMAND, EMPLOYEE, OFFRE , PLACE;
 
 
 
@@ -24,10 +24,10 @@ CREATE TABLE IF NOT EXISTS EMPLOYEE(
   ID_EMPLOYEE INT(11) AUTO_INCREMENT PRIMARY KEY NOT NULL UNIQUE,
   EMPLOYEE_NAME VARCHAR(26),
   EMPLOYEE_LAST_NAME VARCHAR(26),
-  NUM_SECURITE_SOCIAL INT(20) UNIQUE ,
+  NUM_SECURITE_SOCIAL VARCHAR(20),
   EMPLOYEE_MAIL TINYTEXT NOT NULL,
   EMPLOYEE_PASSWORD LONGTEXT NOT NULL,
-  EMPLOYEE_STATUS VARCHAR(26) NOT NULL --SOI UN C ou un G
+  EMPLOYEE_STATUS VARCHAR(26) NOT NULL
 );
 
 
@@ -69,9 +69,10 @@ CREATE TABLE IF NOT EXISTS COMMAND(
   DATE_START DATE,
   DATE_END DATE,
   VALIDATE_COMMAND INT(11) DEFAULT NULL,
+  ID_DEVIS INT(11),
   PAYMENT INT(11) DEFAULT NULL,
-  FOREIGN KEY(ID_DEMAND) REFERENCES DEMAND(ID_DEMAND) ON DELETE CASCADE
-
+  FOREIGN KEY(ID_DEMAND) REFERENCES DEMAND(ID_DEMAND) ON DELETE CASCADE,
+  FOREIGN KEY(ID_DEVIS) REFERENCES DEVIS(ID_DEVIS) ON DELETE CASCADE
 
 );
 
@@ -95,6 +96,16 @@ CREATE TABLE IF NOT EXISTS INTERVENTION(
   FOREIGN KEY(ID_COMMAND) REFERENCES COMMAND(ID_COMMAND) ON DELETE CASCADE
 );
 
+INSERT IGNORE INTO EMPLOYEE (ID_EMPLOYEE, EMPLOYEE_NAME, EMPLOYEE_LAST_NAME, NUM_SECURITE_SOCIAL, EMPLOYEE_MAIL, EMPLOYEE_PASSWORD, EMPLOYEE_STATUS) VALUES ('1', 'admin', 'admin', '12342', 'root@test.fr', '$2y$10$1BRWR463QzEeV8hbwjfVxOGwcX2N2Tdmi88oscVgM1FrDZTDlfNfG', 'R');
+INSERT IGNORE INTO EMPLOYEE (ID_EMPLOYEE, EMPLOYEE_NAME, EMPLOYEE_LAST_NAME, NUM_SECURITE_SOCIAL, EMPLOYEE_MAIL, EMPLOYEE_PASSWORD, EMPLOYEE_STATUS) VALUES ('2', 'com', 'com', '1234', 'com@test.fr', '$2y$10$1BRWR463QzEeV8hbwjfVxOGwcX2N2Tdmi88oscVgM1FrDZTDlfNfG', 'M');
+INSERT IGNORE INTO EMPLOYEE (ID_EMPLOYEE, EMPLOYEE_NAME, EMPLOYEE_LAST_NAME, NUM_SECURITE_SOCIAL, EMPLOYEE_MAIL, EMPLOYEE_PASSWORD, EMPLOYEE_STATUS) VALUES ('3', 'ges', 'ges', '1234', 'ges@test.fr', '$2y$10$1BRWR463QzEeV8hbwjfVxOGwcX2N2Tdmi88oscVgM1FrDZTDlfNfG', 'G');
+
+CREATE TABLE  IF NOT EXISTS DEVIS(
+  ID_DEVIS INT(11) AUTO_INCREMENT PRIMARY KEY NOT NULL UNIQUE,
+  ID_EMPLOYEE INT(11),
+  FOREIGN KEY(ID_EMPLOYEE) REFERENCES EMPLOYEE(ID_EMPLOYEE) ON DELETE CASCADE
+);
+
 
 --INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Bi-bouteille', 'bloc_bi_bouteilles.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '70');
 
@@ -102,8 +113,7 @@ CREATE TABLE IF NOT EXISTS INTERVENTION(
 --INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Détendeur', 'détendeur.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '30');
 --INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Gilet stabilisateur', 'stab-solid.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '60');
 --INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Chronomètre', 'chronomètre.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '15');
---INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Profondimètre', 'profondimètre.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '15');
---INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Couteau', 'couteau.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '10');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Profondimètre', 'profondimètre.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '15');--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Couteau', 'couteau.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '10');
 --INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Jeu de tables de plongée immergeable', 'table-de-plongée.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '20');
 --INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Masque à verres correcteurs', 'masque-de-plongee-avec-verres-correcteurs-pro.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '30');
 --INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Compresseur', 'compresseur.jpg', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.',0,10, '50');

@@ -7,11 +7,11 @@
  */
 require 'header.php';
 ?>
-
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     <main>
         <section>
             <div id="commands">
-                <section class="blanc" id="demand" style="width: 110%">
+                <section class="blanc" id="demand" style="width: 80%">
                     <div class="inscription">
                         <h1>My commands</h1>
                     </div>
@@ -32,11 +32,10 @@ require 'header.php';
                             ?>
                         </table>
                     </div>
-                    <div class="w3-container">
-                        <div class="w3-right">
-                            <button class="button" style="color: white; width:200px; background: black; margin-top: 10px ;">Payer</button>
-                        </div>
-                    </div>
+                    <?php
+                    //On inclue ici le fichier de connexion à la base
+                    include ('includes/buttonPayment.inc.php'); //ici il y avait le code du bouton
+                    ?>
                 </section>
             </div>
 

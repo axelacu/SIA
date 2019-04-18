@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page de paiement</title>
+    <meta charset="utf-8">
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+</head>
+
+<body>
+
+
+<div id="paypal-button"></div>
+
+<script>
+    paypal.Button.render({
+        env: 'sandbox',
+        commit: true,
+        payment : function () {
+            return paypal.request.post('payment.php').then(function (data) {
+                return data.id;
+            });
+            
+        },
+        onAuthorize: function (data, actions) {
+            return paypal.request.post('pay.php', {
+                paymentID: data.paymentID,
+                payerID: data.payerID
+            }).then(function (data) {
+                console.log(data)
+                alert('Merci pour votre achat')
+            }).catch(function (err) {
+                console.log('erreur', err);
+            })
+            
+        }
+    }, '#paypal-button');
+</script>
+</body>

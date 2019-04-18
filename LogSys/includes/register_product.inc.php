@@ -18,11 +18,11 @@ if (isset($_POST['register-submit'])) {
 
     if ($type == 'Product') {
         $type_bool = 0;
-        $target_dir = "/Applications/MAMP/htdocs/SIA/LogSys/images_catalogue/";
+        $target_dir = "/Applications/MAMP/htdocs/SIA3/LogSys/images_catalogue/";
     }
     else if ($type == 'Service') {
         $type_bool = 1;
-        $target_dir = "/Applications/MAMP/htdocs/SIA/LogSys/images_services/";
+        $target_dir = "/Applications/MAMP/htdocs/SIA3/LogSys/images_services/";
     }
 
     if (empty($type) || empty($name) || empty($price) || empty($file)) {

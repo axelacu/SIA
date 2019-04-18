@@ -898,3 +898,12 @@ input[type=submit] {
 	cursor: pointer;
 
 }
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+#global{
+	margin: 0 auto 16px auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}

@@ -10,7 +10,7 @@
         }
     </style>
 
-    <div>
+    <div style="margin-bottom: 32px";>
         <?php
         include ('includes/recherche.inc.php');
         ?>

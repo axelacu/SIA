@@ -81,7 +81,7 @@ var geoJson = [
             "type": "Point"
         }
     },
-
+    //MATERIEL
     {
         "type": "Feature",
         "properties": {
@@ -531,6 +531,7 @@ var geoJson = [
         }
     },
 
+    //BASES
 
     {
         "type": "Feature",
@@ -840,6 +841,7 @@ var geoJson = [
         }
     },
 
+    //EQUIPES;
     {
         "type": "Feature",
         "properties": {

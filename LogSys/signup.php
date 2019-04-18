@@ -7,10 +7,17 @@
                 <h1>Sign Up</h1>
             </div>
             <p id="texte2">Please fill in this form to create an account.</p>
+            <?php
+                if(isset($_GET['error'])){
+                    echo '<p style="color: red; font-size: medium; text-align: center"> Error on registration, please try again </p>';
+                }
 
+                if(isset($_GET['signup'])){
+                    echo '<p style="color: green; font-size: medium; text-align: center"> Congratulation for your registration </p>';
+                }
+            ?>
                 <form action="includes/signup.inc.php" method="post">
                     <div class="signup_in">
-
                         <label for="username"><b>Username</b></label>
                         <input type="text" name="uid" placeholder="Username">
 
