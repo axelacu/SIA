@@ -20,10 +20,10 @@ require 'header.php';
                             <tr>
                                 <th><label> <b>Reference</b></label></th>
                                 <!-- DEESCRIPTION ENDROIT OU IL POURRA TELECHARGER LE DEVIS-->
-                                <th style="width: 40%"><label> <b>Description</b></label></th>
-                                <th style="width: 40%"><label> <b>Date commande</b></label></th>
-                                <th style="text-align: center"><label> <b>Debut</b></label></th>
-                                <th style="text-align: center"><label> <b>Fin</b></label></th>
+                                <th style="width: 30%"><label> <b>Description</b></label></th>
+                                <th style="width: 20%"><label> <b>Date commande</b></label></th>
+                                <th style="text-align: center"><label> <b>Start</b></label></th>
+                                <th style="text-align: center"><label> <b>End</b></label></th>
                                 <th style="text-align: center"><label> <b>Valide</b></label></th>
                             </tr>
                             <?php

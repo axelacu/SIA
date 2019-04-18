@@ -54,20 +54,20 @@ if($result) {
 
             echo '
             <br>
-            <h3> Nickname : <b>'.$client.'</b></h3>
+            <h3> Name of the client : <b>'.$client.'</b></h3>
                     <table class="w3-table w3-bordered">
                         <tr>
                             <th><label> <b>Reference</b></label></th>
-                            <th style="width: 40%"><label> <b>Description</b></label></th>
-                            <th style="width: 40%"><label> <b>Date commande</b></label></th>
+                            <th style="width: 30%"><label> <b>Description</b></label></th>
+                            <th style="width: 20%"><label> <b>Date commande</b></label></th>
                             <th style="text-align: center"><label> <b>Debut</b></label></th>
                             <th style="text-align: center"><label> <b>Fin</b></label></th>
                             <th style="text-align: center"><label> <b>Valide</b></label></th>
                         </tr>
                         <tr>
                             <td style="width: 100px"><a>r60'.$donnees[1].'</a></td>
-                            <td style="width: 10%" ><img src="' . $file_name. '" style="width:40%;" alt = "'.$label.'"><a style="display: block">'.$label.'</a></td>
-                            <td style="text-align: center">' . $donnees[6] . '</td>
+                            <td style="width: 10%"><img src="' . $file_name. '" style="width:40%;text-align: center " alt = "'.$label.'"><a style="display: block;padding-left: 10%">'.$label.'</a></td>
+                            <td style="text-align: left">' . $donnees[6] . '</td>
                             <td style="text-align: center">' . $donnees[8] . '</td>
                             <td style="text-align: center">' . $donnees[9] . '</td>
                             <td style="text-align: center">' . $donnees[11] . '</td>
