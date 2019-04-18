@@ -33,7 +33,7 @@ while($row = mysqli_fetch_row($result)) {
     echo '<div class="w3-row-padding w3-margin-top">
             <div class="w3-two">
                 <div class="w3-card">
-                    <div class="w3-container w3-center" style="background-color: #17469F; color:#EEEEEE;">
+                    <div class="w3-container w3-center" style="background-color: #17469F; color:#EEEEEE; margin-bottom: 20px">
                         <h3 class="w3-top-left-align">' . $label . '</h3>
                         <div class="w3-display-container">
                             <img class="w3-circle w3-margin" src="' . $image . '" alt="' . $image . '" style="width:30%">

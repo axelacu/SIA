@@ -108,16 +108,26 @@ else
         if ((($copie == 'oui') && ($num_emails == 2)) || (($copie == 'non') && ($num_emails == 1)))
         {
             echo '<p>'.$message_envoye.'</p>';
+            header('Location: ./contact.php?success=true');
+            exit();
+
         }
         else
         {
             echo '<p>'.$message_non_envoye.'</p>';
+            header('Location: ./contact.php?error=true');
+            exit();
         };
     }
     else
     {
         // une des 3 variables (ou plus) est vide ...
         echo '<p>'.$message_formulaire_invalide.' <a href="contact.php">Retour au formulaire</a></p>'."\n";
+        header('Location: ./contact.php?invalide=true');
+        exit();
     };
 }; // fin du if (!isset($_POST['envoi']))
+
+
 ?>
+
