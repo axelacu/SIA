@@ -20,6 +20,7 @@ if(isset($_GET['submit-command'])){
                 SET VALIDATE_COMMAND = ?, DATE_COMMAND = CURRENT_DATE 
                 WHERE ID_COMMAND = ?';
 
+
         if(!mysqli_stmt_prepare($stmt,$sql)){
             echo 'ERROR!';
             exit();
@@ -28,7 +29,7 @@ if(isset($_GET['submit-command'])){
             for ($i = 1; $i < count($ids); $i++) {
                 $id = (int) $ids[$i];
                 $val = 1;
-                //s for string is the data type, b = boolean, etc..
+
                 mysqli_stmt_bind_param($stmt, "ii", $val,$id);
                 mysqli_stmt_execute($stmt);
 
