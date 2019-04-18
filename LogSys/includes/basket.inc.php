@@ -46,14 +46,14 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
                     <tr>
                         <td style="width: 200px"> <div class="w3-cell" ">';
 
-                        if ($donnees[11]==0){
-                            $dir = "images_catalogue/";
-                        }
-                        else
-                            $dir = "images_services/";
+            if ($donnees[11]==0){
+                $dir = "images_catalogue/";
+            }
+            else
+                $dir = "images_services/";
 
 
-                        echo '
+            echo '
                             <img src="'. $dir . $donnees[7] . '" style="width:60%">
                         </td>
                         <td style="width: 600px"> <a style="text-decoration: underline; color: #3a768f;" href="display_product.php?label=' . $donnees[4] .'&type_offre='.$donnees[11].'&file_name='.$donnees[7].'&description='.$donnees[5].'&prix='.$donnees[8].'&id_offre='.$donnees[10].'" 
@@ -65,19 +65,19 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
                         <td style="text-align: center">'.$donnees[2].'</td>
                         <td style="text-align: center">'.$donnees[3].'</td>';
 
-                        // Affiche la quantité pour un produit mais pas pour un service
-                        if ($donnees[11]==0){
-                            echo'
+            // Affiche la quantité pour un produit mais pas pour un service
+            if ($donnees[11]==0){
+                echo'
                                 <td style="text-align: center; padding-top: 10px;">'. $donnees[6] .'</td>
                                 <!--<td style="text-align: center">
                                     <input type="number" name="qty" id="quantity" min="0" value='. $donnees[6] .' style="width: 55px; height: 30px;"><br/>
                                 </td>-->
                                 ';
-                        }
-                        else {
-                            echo'<td style="text-align: center"></td>';
-                        }
-        echo'
+            }
+            else {
+                echo'<td style="text-align: center"></td>';
+            }
+            echo'
                         <td style="text-align: center">'.$donnees[8]*$donnees[6].'€</td>
                     </tr>
         ';
@@ -104,16 +104,16 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
                     <h1 style="width: 100%;">You could also like</h1>
                 </section>
                     ';
-                    $req2= "SELECT label, type_offre, file_name, description, prix, id_offre FROM OFFRE";
-                    $result2 = mysqli_query($conn,$req2);
-                    $array_material = array();
+        $req2= "SELECT label, type_offre, file_name, description, prix, id_offre FROM OFFRE";
+        $result2 = mysqli_query($conn,$req2);
+        $array_material = array();
 
-                    if($result2) {
-                        $i=0;
-                        $count=0;
-                        while ($donnees = mysqli_fetch_row($result2) and $count < 3) {
-                            if (($i%4) == 1) {
-                                echo '
+        if($result2) {
+            $i=0;
+            $count=0;
+            while ($donnees = mysqli_fetch_row($result2) and $count < 3) {
+                if (($i%4) == 1) {
+                    echo '
                                         <div class="w3-third">
                                                 <div>
                                                     <div class="w3-container w3-white w3-center">
@@ -133,12 +133,12 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
                                                 </div>
                                         </div>
                                     ';
-                                $count += 1;
-                            }
+                    $count += 1;
+                }
 
-                            $i += 1;
-                        }
-                    }
+                $i += 1;
+            }
+        }
 
         echo '
         
@@ -176,3 +176,4 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
 
 
 mysqli_free_result($result);
+
