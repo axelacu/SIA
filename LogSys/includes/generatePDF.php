@@ -48,10 +48,20 @@ class PDF extends FPDF
     function Footer()
     {
         // Positionnement à 1,5 cm du bas
-        $this->SetY(-15);
+        $this->SetY(-30);
         // Police Arial italique 8
-        $this->SetFont('Arial','I',8);
         // Numéro de page
+        $this->SetFont('Arial','I',10);
+        $this->SetTextColor(197, 182, 179);
+
+
+        $this->write(5, 'Validite du devis: 3 mois '."\n");
+        $this->write(5, 'Condition de reglement: la totalite a la commande'. "\n");
+        $this->write(5, 'La non-satisfaction des clients de AIRBLIO entraineront un remboursement de tout ou partie de la somme de leurs commandes. ');
+
+
+        $this->SetFont('Arial','I',8);
+
         $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
     }
 
@@ -115,6 +125,16 @@ $data = $pdf->LoadData('devis.txt');
 $pdf->SetFont('Arial','',14);
 $pdf->setY(110);
 $pdf->FancyTable($header,$data);
+$pdf->setX(136);
+$pdf->write(20, 'TOTAL HT:');
+$pdf->setX(136);
+
+$pdf->write(40,'TVA 20%:');
+$pdf->SetFont('Arial','B',13);
+$pdf->setX(116);
+$pdf->write(60,'TOTAL TTC en euros:');
+
+
 $pdf->Output();
 
 ?>
