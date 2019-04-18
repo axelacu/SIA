@@ -13,7 +13,7 @@ $req= "SELECT D.DATE_DEMANDE, D.REMARQUE, D.DATE_START, D.DATE_END, I.LABEL, I.D
 $result = mysqli_query($conn,$req);
 
 
-echo '<meta name="viewport" content="width=device-width, initial-scale=1">
+echo ' <meta name="viewport" content="width=device-width, initial-scale=1">
        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-highway.css">';
 
@@ -99,7 +99,7 @@ if(isset($_SESSION['USER_ID']) &&  isset($_SESSION['USER_NAME'])){
         <div id="global" style="margin-left: auto; margin-right: auto ;width: 1200px;" >
         
             <!--YOU COULD ALSO LIKE-->
-            <div class ="blanc" id="demand" style="display: inline-block; margin: 20px 20px 0 0;" >
+            <div class ="blanc" id="demand" style="display: inline-block; margin: 20px 20px 0 0; max-width: 60%;" >
                 <section class="inscription">
                     <h1 style="width: 100%;">You could also like</h1>
                 </section>

@@ -120,7 +120,7 @@ session_start();
                         <a href="contact.php" id="assistance" >Assistance</a>
                         <?php
                         if(isset($_SESSION['USER_NAME'])){
-                            echo '<a href="map_monde.php" id="mappmonde" >Mapmonde</a>';
+                            echo '<a href="mapmonde.php" id="mappmonde" >Mapmonde</a>';
                         }
                         ?>
                         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
