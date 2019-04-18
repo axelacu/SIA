@@ -86,7 +86,7 @@
                     <li style="list-style-type: none;">
                         <p class="textecdu" style="font-family: Helvetica; font-size: 13px; margin-bottom: 10px"><b>Nos offres : </b></p>
                         <a href="services.php" style="font-size: 12px;">Support de surface</a></br>
-                        <a href="catalogue.php" style="font-size: 12px;">Ventes et location de matériels de plongée</a></br>
+                        <a href="catalogue.php" style="font-size: 12px;">Vente et location de matériels de plongée</a></br>
                         <a href="services.php" style="font-size: 12px;">Installation de matériels de plongée</a></br>
                         <a href="services.php" style="font-size: 12px;">Maintenance de matériels de plongée</a></br>
 
