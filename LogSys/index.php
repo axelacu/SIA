@@ -34,10 +34,11 @@
         </style>
 
 
+<body style="background-image: url(images/horizon-ocean.jpg);">
 
-        <div class="container" style="margin-bottom: 30px">
-            <h2>Bienvenue !</h2>
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="containerheader" style="margin : 30px 30px 40px 30px; width: 1200px; ">
+
+            <div style="float: left;width: 600px;" id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -67,12 +68,35 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
+
+
+            <div class="blanc" style="max-width: 40%; margin:0 0 0 20px; padding: 10px 20px 10px 20px;text-align: justify;">
+
+                <p class="textecdu" style="font-size: 20px; padding-top:10px; font-family: Helvetica; border-bottom: 1px solid #212121;
+                padding-bottom: 10px; margin-bottom: 5px"><b>Qui sommes-nous ?</b></p>
+
+                <p class="textecdu" style="font-family: Helvetica; font-size: 13px" > <br> <b>AIRBLIO</b> est une entreprise française installée dans les Vosges depuis 1970, est spécialisée dans
+                   l’équipement haut de gamme pour les plongées en mer et l’accompagnement des entreprises.</br></p><p class="textecdu" style="font-family: Helvetica; font-size: 13px" > Elle est actuellement composée de plusieurs équipes qui effectuent des missions sur le monde entier.
+                    Son rôle, auprès des clients, est l’installation, la maintenance et l’évolution du matériel.
+                    L’entreprise commercialise ses produits et services auprès du domaine professionnel,
+                    en particulier auprès de structures de recherche publiques ou privées.
+                </p>
+
+                <ul style="padding-top: 20px;padding-right: 10px;">
+                    <li style="list-style-type: none;">
+                        <p class="textecdu" style="font-family: Helvetica; font-size: 13px; margin-bottom: 10px"><b>Notre offre : </b></p>
+                        <a href="services.php" style="font-size: 12px;">Support de surface</a></br>
+                        <a href="catalogue.php" style="font-size: 12px;">Ventes et location de matériels de plongée</a></br>
+                        <a href="services.php" style="font-size: 12px;">Installation de matériels de plongée</a></br>
+                        <a href="services.php" style="font-size: 12px;">Maintenance de matériels de plongée</a></br>
+
+                    </li>
+                </ul>
+            </div>
         </div>
-
-
         <!-- Fin du carroussel -->
 
-
+        </body>
 	</main>
 
 <?php
