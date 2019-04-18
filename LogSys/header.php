@@ -74,6 +74,7 @@ session_start();
                                             <a href="update_stock.php" class="w3-bar-item w3-button button">Updates Stocks</a>
                                               <a href="register_product.php" class="w3-bar-item w3-button button">Register Products</a>
                                               <a href="commands_pro.php" class="w3-bar-item w3-button button">Waiting Clients</a>
+                                              <a href="register_intervention.php" class="w3-bar-item w3-button button">Register Intervention</a>
                                               <a href="commands_currents.php" class="w3-bar-item w3-button button">Current Command</a>';
                         }
 
