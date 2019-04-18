@@ -30,13 +30,13 @@ while($row = mysqli_fetch_row($result)) {
     $image = $dir . "/" . $file_name;
 
 
-    echo '<div class="w3-row-padding w3-margin-top">
+    echo '<div class="w3-row-padding" style="padding-bottom: 0">
             <div class="w3-two">
-                <div class="w3-card">
+                <div class="w3-card" style="margin: 20px";>
                     <div class="w3-container w3-center" style="background-color: #17469F; color:#EEEEEE; margin-bottom: 20px">
-                        <h3 class="w3-top-left-align">' . $label . '</h3>
+                        <h1 class="w3-top-left-align">' . $label . '</h1>
                         <div class="w3-display-container">
-                            <img class="w3-circle w3-margin" src="' . $image . '" alt="' . $image . '" style="width:30%">
+                            <img class="w3-margin" src="' . $image . '" alt="' . $image . '" style="width:30%">
                             <div class="w3-display-middle w3-display-hover">
                                 <a href="display_product.php?label=' . $label .'&type_offre=1&file_name='. $file_name .'&description='. $description .'&prix='. $prix .'&id_offre='.$id_offre.'" 
                                 target="_blank">
@@ -44,7 +44,7 @@ while($row = mysqli_fetch_row($result)) {
                                 </a>
                             </div>
                         </div>
-                        <h5>' . $description . '</h5>
+                        <h5 style="padding-bottom: 20px;">' . $description . '</h5>
                     </div>
                 </div>
             </div>
