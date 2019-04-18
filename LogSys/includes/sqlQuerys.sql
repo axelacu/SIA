@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS DEVIS, INTERVENTION, EQUIPE, COMMAND ,DEMAND, EMPLOYEE, OFFRE , PLACE;
+--DROP TABLE IF EXISTS DEVIS, INTERVENTION, EQUIPE, COMMAND ,DEMAND, EMPLOYEE, OFFRE , PLACE;
 
 
 
@@ -110,27 +110,32 @@ CREATE TABLE  IF NOT EXISTS DEVIS(
 
 
 
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Bi-bouteilles', 'bloc_bi_bouteilles.jpg', 'In the case of scuba diving, the devices used are twin-bottle diving blocks. They are equipped with a bloody and a subcutaneous one.',0,10, '70');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Détendeur', 'détendeur.jpg', 'We provide a surveillance surface boat, suitable for receiving the rescue diver.',0,10, '30');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Gilet stabilisateur', 'stab-solid.jpg', 'Usable from 0 to 12 meters, depending on the HOC. Beyond 12 meters, the wearing of the stabilizer vest is mandatory.',0,10, '60');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Chronomètre', 'chronomètre.jpg', 'Part of the individual equipment, usable on the surface.',0,10, '15');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Profondimètre', 'profondimètre.jpg', 'Part of the individual equipment, usable at a depth of more than 12 metres.',0,10, '15');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Couteau', 'couteau.jpg', 'Part of the individual equipment.',0,10, '10');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Robinetterie', 'robinetterie.jpg', 'Valves are dismantled annually whenever an anomaly is detected.',0,10, '30');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Jeu de tables de plongée immergeable', 'table-de-plongée.jpg', 'Part of the individual equipment, can be used in depth.',0,10, '20');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Masque à verres correcteurs', 'masque-de-plongee-avec-verres-correcteurs-pro.jpg', 'Mask resistant to dives over 12 meters. At the request of the diver or the COH, adaptable according to the physiological criteria.',0,10, '30');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Compresseur', 'compresseur.jpg', 'The compressors must be sucked in in a place where there is no risk of pollution.',0,10, '50');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Pavillon Alpha', 'pavillon-alpha.jpg', 'The use of an Alpha flag indicating the presence of divers, visible from a distance sufficient to ensure the safety of responders, is mandatory.',0,10, '15');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Trousse d\’urgence', 'trousse-de-secours-plongee.jpg', 'Medical equipment in case of emergency. Each site must have at least one updated and revised medical oxygen inhalation kit and emergency kit.',0,10, '20');
-
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, PRIX) VALUES ('Installation de matériel', 'equipement_plongee.jpg', 'We provide the complete installation of our equipment.',1,'100');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, PRIX) VALUES('Maintenance de matériel', 'photo-materiel.jpg', 'Our teams check the condition of the equipment and guarantee its evolution.',1,'100');
-INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, PRIX) VALUES ('Support de surface', 'photo-equipement.jpg', 'We provide a surveillance surface boat, suitable for receiving the rescue diver.',1,'100');
 
 
-INSERT IGNORE INTO DEMAND(DATE_DEMANDE, REMARQUE, ID_USER, ID_OFFRE, DATE_START, DATE_END, ACCEPTED,QUANTITE_DEMAND )  VALUES(CURRENT_DATE ,'Mes voeux', 1,1,CURRENT_DATE ,CURRENT_DATE ,FALSE ,1);
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Bi-bouteilles', 'bloc_bi_bouteilles.jpg', 'In the case of scuba diving, the devices used are twin-bottle diving blocks. They are equipped with a bloody and a subcutaneous one.',0,10, '70');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Détendeur', 'détendeur.jpg', 'We provide a surveillance surface boat, suitable for receiving the rescue diver.',0,10, '30');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Gilet stabilisateur', 'stab-solid.jpg', 'Usable from 0 to 12 meters, depending on the HOC. Beyond 12 meters, the wearing of the stabilizer vest is mandatory.',0,10, '60');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Chronomètre', 'chronomètre.jpg', 'Part of the individual equipment, usable on the surface.',0,10, '15');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Profondimètre', 'profondimètre.jpg', 'Part of the individual equipment, usable at a depth of more than 12 metres.',0,10, '15');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Couteau', 'couteau.jpg', 'Part of the individual equipment.',0,10, '10');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Robinetterie', 'robinetterie.jpg', 'Valves are dismantled annually whenever an anomaly is detected.',0,10, '30');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Jeu de tables de plongée immergeable', 'table-de-plongée.jpg', 'Part of the individual equipment, can be used in depth.',0,10, '20');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Masque à verres correcteurs', 'masque-de-plongee-avec-verres-correcteurs-pro.jpg', 'Mask resistant to dives over 12 meters. At the request of the diver or the COH, adaptable according to the physiological criteria.',0,10, '30');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Compresseur', 'compresseur.jpg', 'The compressors must be sucked in in a place where there is no risk of pollution.',0,10, '50');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Pavillon Alpha', 'pavillon-alpha.jpg', 'The use of an Alpha flag indicating the presence of divers, visible from a distance sufficient to ensure the safety of responders, is mandatory.',0,10, '15');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, QUANTITE,PRIX) VALUES ('Trousse d\’urgence', 'trousse-de-secours-plongee.jpg', 'Medical equipment in case of emergency. Each site must have at least one updated and revised medical oxygen inhalation kit and emergency kit.',0,10, '20');
 
-INSERT IGNORE INTO PLACE(LATITUDE, LONGITUDE, ALTITUDE, PLACE_NAME) VALUES (30,30,40,'France');
-INSERT IGNORE INTO PLACE(LATITUDE, LONGITUDE, ALTITUDE, PLACE_NAME) VALUES (31,31,40,'Japon')
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, PRIX) VALUES ('Installation de matériel', 'equipement_plongee.jpg', 'We provide the complete installation of our equipment.',1,'100');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, PRIX) VALUES('Maintenance de matériel', 'photo-materiel.jpg', 'Our teams check the condition of the equipment and guarantee its evolution.',1,'100');
+--INSERT IGNORE INTO OFFRE(LABEL,FILE_NAME, DESCRIPTION,TYPE_OFFRE, PRIX) VALUES ('Support de surface', 'photo-equipement.jpg', 'We provide a surveillance surface boat, suitable for receiving the rescue diver.',1,'100');
 
 
+--INSERT IGNORE INTO DEMAND(DATE_DEMANDE, REMARQUE, ID_USER, ID_OFFRE, DATE_START, DATE_END, ACCEPTED, QUANTITE_DEMAND)  VALUES(CURRENT_DATE ,'Mes voeux', 1,1,CURRENT_DATE ,CURRENT_DATE ,FALSE ,1);
+
+--INSERT IGNORE INTO PLACE(LATITUDE, LONGITUDE, ALTITUDE, PLACE_NAME) VALUES (30,30,40,'France');
+--INSERT IGNORE INTO PLACE(LATITUDE, LONGITUDE, ALTITUDE, PLACE_NAME) VALUES (31,31,40,'Japon')
+
+
+--INSERT IGNORE INTO EQUIPE(NAME_EQUIPE,DESCRIPTION,CURRENT_LOCATION,NB_MEMBERS) VALUES('Blue','Team of enginers',1,5);
+--INSERT IGNORE INTO EQUIPE(NAME_EQUIPE,DESCRIPTION,CURRENT_LOCATION,NB_MEMBERS) VALUES('Red','Team of enginers',1,6);
+--INSERT IGNORE INTO EQUIPE(NAME_EQUIPE,DESCRIPTION,CURRENT_LOCATION,NB_MEMBERS) VALUES('Green','Surface support',1,3)
