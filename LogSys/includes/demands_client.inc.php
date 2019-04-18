@@ -40,7 +40,7 @@ if($result) {
                     <tr>
                         <td style="width: 200px"><a>r60'.$donnees[0].'</a></td>
                         <td style="width: 600px" ><img src="' . $file_name. '" style="width:40%;" alt = "'.$label.'"><a style="display: block">'.$label.'</a></td>
-                        <td style="text-align: center">' . $donnees[5] . '</td>
+                        <td style="text-align: left">' . $donnees[5] . '</td>
                         <td style="text-align: center">' . $donnees[7] . '</td>
                         <td style="text-align: center">' . $donnees[8] . '</td>
                         <td style="text-align: center">' . $donnees[10] . '</td>

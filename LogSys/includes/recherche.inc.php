@@ -47,7 +47,7 @@ echo '<meta name="viewport" content="width=device-width, initial-scale=1">
 $array_material_name = array();
 
 while($row = mysqli_fetch_row($articles)) {
-    $file_name = $dir . "/" . $row[0];
+    $file_name = $row[0];
     $description = $row[1];
     $prix = $row[2];
     $nom = $row[3];
@@ -79,7 +79,7 @@ for($i =($_GET['page']-1)*$num_of_product_by_page  ; $i<($num_of_product_by_page
         <div class="w3-card">
             <div class="w3-container w3-white w3-center">
               <div class="w3-display-container w3-border w3-margin-top">
-                  <img class=" w3-margin-top w3-margin-bottom" src="' . $array_material_name[$i][0] . '" alt="' . $array_material_name[$i][3] . '" style="width:40%">
+                  <img class=" w3-margin-top w3-margin-bottom" src="' . $dir . $array_material_name[$i][0] . '" alt="' . $array_material_name[$i][3] . '" style="width:40%">
                     <div class="w3-display-middle w3-display-hover">
                         <a href="display_product.php?label=' . $array_material_name[$i][3] .'&type_offre='.$array_material_name[$i][4].'&file_name='.$array_material_name[$i][0].'&description='.$array_material_name[$i][1].'&prix='.$array_material_name[$i][2].'&id_offre='.$array_material_name[$i][5].'" 
                             <button type="submit" name="display_product" class="w3-button w3-black">Voir <i class="fa fa-shopping-cart"></i></button>
