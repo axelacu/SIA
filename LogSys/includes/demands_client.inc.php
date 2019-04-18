@@ -10,19 +10,28 @@ require 'dbh.inc.php';
 require '../Video/Product.php';
 require '../Video/Panier.php';
 
-$dir = 'images_catalogue';
 
-$req ='SELECT C.ID_COMMAND,D.ID_DEMAND,O.ID_OFFRE, O.FILE_NAME, O.LABEL, C.DATE_COMMAND,C.DATE_VALIDATION,C.DATE_START,C.DATE_END,D.ID_USER,O.PRIX, C.VALIDATE_COMMAND, C.PAYMENT,D.QUANTITE_DEMAND 
+
+$req ='SELECT C.ID_COMMAND,D.ID_DEMAND,O.ID_OFFRE, O.FILE_NAME, O.LABEL, C.DATE_COMMAND,C.DATE_VALIDATION,C.DATE_START,C.DATE_END,D.ID_USER,O.PRIX, C.VALIDATE_COMMAND, C.PAYMENT,D.QUANTITE_DEMAND, O.TYPE_OFFRE 
 FROM COMMAND C, DEMAND D, OFFRE O
 WHERE C.ID_DEMAND = D.ID_DEMAND AND D.ID_OFFRE = O.ID_OFFRE AND C.PAYMENT= 0 AND D.ID_USER ='.$_SESSION['USER_ID'] ;
+
 
 $result = mysqli_query($conn, $req);
 $list_nom_prod = array();
 $list_prix = array();
 $list_quantite = array();
 $basketPaypal = new Panier();
+
 if($result) {
     while ($donnees = mysqli_fetch_row($result)) {
+
+        //vérifier si c'est un produit ou un service
+        if ($donnees[14] == 0)
+            $dir = 'images_catalogue';
+        else
+            $dir = 'images_services';
+
        $file_name = $dir."/".$donnees[3];
        $label = $donnees[4];
        $prix = $donnees[10];
