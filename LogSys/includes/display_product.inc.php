@@ -100,6 +100,6 @@ if (isset($_GET['label']) && isset($_GET['type_offre']) && isset($_GET['file_nam
 }
 
 else {
-    header("Location: ../catalogue.php?");
+    header("Location: ../catalogue.php");
     exit();
 }

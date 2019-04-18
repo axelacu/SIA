@@ -66,12 +66,12 @@ session_start();
                                               <a href="commands_currents.php" class="w3-bar-item w3-button button">Current Command</a>';
                                 break;
                             case 'G':
-                                $submenu = '<a href="update_product.php" class="w3-bar-item w3-button button">Updates Products</a>
+                                $submenu = '<a href="update_stock.php" class="w3-bar-item w3-button button">Updates Stocks</a>
                                               <a href="register_product.php" class="w3-bar-item w3-button button">Register Products</a>';
                                 break;
                             case 'R':
                                 $submenu = '<a href="singup_employees.php" class="w3-bar-item w3-button button">Add Employees</a>
-                                            <a href="update_product.php" class="w3-bar-item w3-button button">Updates Products</a>
+                                            <a href="update_stock.php" class="w3-bar-item w3-button button">Updates Stocks</a>
                                               <a href="register_product.php" class="w3-bar-item w3-button button">Register Products</a>
                                               <a href="commands_pro.php" class="w3-bar-item w3-button button">Waiting Clients</a>
                                               <a href="commands_currents.php" class="w3-bar-item w3-button button">Current Command</a>';
