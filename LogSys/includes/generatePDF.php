@@ -126,13 +126,13 @@ $pdf->SetFont('Arial','',14);
 $pdf->setY(110);
 $pdf->FancyTable($header,$data);
 $pdf->setX(136);
-$pdf->write(20, 'TOTAL HT:');
+$pdf->write(20, 'TOTAL HT: 230 euros');
 $pdf->setX(136);
 
-$pdf->write(40,'TVA 20%:');
+$pdf->write(40,'TVA 20%: 46 euros');
 $pdf->SetFont('Arial','B',13);
 $pdf->setX(116);
-$pdf->write(60,'TOTAL TTC en euros:');
+$pdf->write(60,'TOTAL TTC en euros: 276 euros');
 
 
 $pdf->Output();
