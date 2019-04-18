@@ -31,10 +31,10 @@ require 'header.php';
 
                     <p class="textecdu"><b>Conception & Réalisations :</b></br></p>
 
-                    OA3S</br>
+                    <p class="textecdu">OA3S</br>
                     XX, boulevard du XXX XXX</br>
                     75016 Paris</br>
-                    Site : http://www.OA3S.fr/</br>
+                    Site : http://www.OA3S.fr/</br></p>
 
                     <p class="textecdu">Ce site est hébergé par XXX XXX.</p>
                     <p class="textecdu"><b>Siège social :</b> 21 Avenue de la créativité - 59650 Villeneuve d'Ascq - France.</p>
